@@ -17,18 +17,18 @@
     
 
     <meta name="description" content="想在Mac OS X设置默认Python版本，系统自带是2.7，自装的是3.5. 以下方法：
-1.修改链接先备份原来的python链接，再把3.5的解释器做一个链接到原目录下，适当修改相关路径：1sudo ln -s /System/Library/Frameworks/Python.framework/Versions/3.5/bin/python3.5 /usr/local/bin/pytho">
+Method 1.修改链接先备份原来的python链接，再把3.5的解释器做一个链接到原目录下，适当修改相关路径：1sudo ln -s /System/Library/Frameworks/Python.framework/Versions/3.5/bin/python3.5 /usr/local/bi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac OS X设置默认Python版本 | H.J.T. Github">
 <meta property="og:url" content="http://yoursite.com/2017/01/04/zh-Mac-OS-X设置默认Python版本/undefined/index.html">
 <meta property="og:site_name" content="H.J.T. Github">
 <meta property="og:description" content="想在Mac OS X设置默认Python版本，系统自带是2.7，自装的是3.5. 以下方法：
-1.修改链接先备份原来的python链接，再把3.5的解释器做一个链接到原目录下，适当修改相关路径：1sudo ln -s /System/Library/Frameworks/Python.framework/Versions/3.5/bin/python3.5 /usr/local/bin/pytho">
-<meta property="og:updated_time" content="2017-01-04T05:58:38.000Z">
+Method 1.修改链接先备份原来的python链接，再把3.5的解释器做一个链接到原目录下，适当修改相关路径：1sudo ln -s /System/Library/Frameworks/Python.framework/Versions/3.5/bin/python3.5 /usr/local/bi">
+<meta property="og:updated_time" content="2017-01-04T07:23:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac OS X设置默认Python版本 | H.J.T. Github">
 <meta name="twitter:description" content="想在Mac OS X设置默认Python版本，系统自带是2.7，自装的是3.5. 以下方法：
-1.修改链接先备份原来的python链接，再把3.5的解释器做一个链接到原目录下，适当修改相关路径：1sudo ln -s /System/Library/Frameworks/Python.framework/Versions/3.5/bin/python3.5 /usr/local/bin/pytho">
+Method 1.修改链接先备份原来的python链接，再把3.5的解释器做一个链接到原目录下，适当修改相关路径：1sudo ln -s /System/Library/Frameworks/Python.framework/Versions/3.5/bin/python3.5 /usr/local/bi">
     
     
     
@@ -244,12 +244,12 @@ classes that you can use:
 
   <section id="post-content" class="article-content post">
     <p>想在Mac OS X设置默认Python版本，系统自带是2.7，自装的是3.5. 以下方法：</p>
-<h3 id="1-修改链接"><a href="#1-修改链接" class="headerlink" title="1.修改链接"></a>1.修改链接</h3><p>先备份原来的python链接，再把3.5的解释器做一个链接到原目录下，适当修改相关路径：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln <span class="_">-s</span> /System/Library/Frameworks/Python.framework/Versions/3.5/bin/python3.5 /usr/<span class="built_in">local</span>/bin/python</div></pre></td></tr></table></figure></p>
+<h3 id="Method-1-修改链接"><a href="#Method-1-修改链接" class="headerlink" title="Method 1.修改链接"></a>Method 1.修改链接</h3><p>先备份原来的python链接，再把3.5的解释器做一个链接到原目录下，适当修改相关路径：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ln <span class="_">-s</span> /System/Library/Frameworks/Python.framework/Versions/3.5/bin/python3.5 /usr/<span class="built_in">local</span>/bin/python</div></pre></td></tr></table></figure></p>
 <p>但是建议不要用链接方法，因为可能会导致想调用自带python的软件出现问题。</p>
-<h3 id="2-修改环境变量"><a href="#2-修改环境变量" class="headerlink" title="2.修改环境变量"></a>2.修改环境变量</h3><p>可以修改~/.bash_profile，修改path variable虽然比较安全。<br>找不到.bash_profile文件的可以使用find查找：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find / -name .bash_profile</div></pre></td></tr></table></figure></p>
+<h3 id="Method-2-修改环境变量"><a href="#Method-2-修改环境变量" class="headerlink" title="Method 2.修改环境变量"></a>Method 2.修改环境变量</h3><p>可以修改~/.bash_profile，修改path variable虽然比较安全。<br>找不到.bash_profile文件的可以使用find查找：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find / -name .bash_profile</div></pre></td></tr></table></figure></p>
 <p>然后在bash_profile文件添加下行（具体path取决python3安装路径）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">alias</span> python=<span class="string">"/System/Library/Frameworks/Python.framework/Versions/3.5/bin/python3.5"</span></div></pre></td></tr></table></figure></p>
 <p>然后重启一下Terminal。</p>
-<h3 id="3-直接加版本号"><a href="#3-直接加版本号" class="headerlink" title="3.直接加版本号"></a>3.直接加版本号</h3><p>最便捷的方法是：<br>如果想用系统自带python2.7，就在命令行输入“python”；<br>如果想用python3.5，就在命令行输入“python3”。<br>吾辈最终还是觉得这方法最合适。</p>
+<h3 id="Method-3-直接加版本号"><a href="#Method-3-直接加版本号" class="headerlink" title="Method 3.直接加版本号"></a>Method 3.直接加版本号</h3><p>最便捷的方法是：<br>如果想用系统自带python2.7，就在命令行输入“python”；<br>如果想用python3.5，就在命令行输入“python3”。<br>吾辈最终还是觉得这方法最合适。</p>
 <h3 id="Python路径相关："><a href="#Python路径相关：" class="headerlink" title="Python路径相关："></a>Python路径相关：</h3><p>① Mac自带的python环境在(Python 2.7.10)：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/System/Library/Frameworks/Python.framework/Versions/2.7</div></pre></td></tr></table></figure></p>
 <p>② 用户安装的python环境在(Python 3.5.2)：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/Library/Frameworks/Python.framework/Versions/3.5</div></pre></td></tr></table></figure></p>
 <p>③ Mac自带的python解释器默认路径在(Python 2.7.10)：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/python2.7</div></pre></td></tr></table></figure></p>
