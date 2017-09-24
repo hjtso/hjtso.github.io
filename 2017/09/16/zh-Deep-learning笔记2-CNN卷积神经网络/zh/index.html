@@ -53,9 +53,10 @@
 <meta property="og:image" content="http://yoursite.com/image/DL/2/3.gif">
 <meta property="og:image" content="http://yoursite.com/image/DL/2/4.gif">
 <meta property="og:image" content="http://yoursite.com/image/DL/2/5.png">
+<meta property="og:image" content="http://yoursite.com/image/DL/2/CNN.jpg">
 <meta property="og:image" content="http://yoursite.com/image/DL/2/autoencoder_1.png">
 <meta property="og:image" content="http://yoursite.com/image/DL/2/cnnarchitecture.jpg">
-<meta property="og:updated_time" content="2017-09-17T13:45:47.000Z">
+<meta property="og:updated_time" content="2017-09-24T03:08:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep learning笔记2-CNN卷积神经网络 | H.J.T. Github">
 <meta name="twitter:description" content="1. 卷积神经网络简介（CNN）
@@ -332,7 +333,11 @@ classes that you can use:
 <p>tf.nn.max_pool() 函数实现最大池化时， ksize参数是滤波器大小，strides参数是步长。2x2 的滤波器配合 2x2 的步长是常用设定。</p>
 <p>ksize 和 strides 参数也被构建为四个元素的列表，每个元素对应 input tensor 的一个维度 ([batch, height, width, channels])，对 ksize 和 strides 来说，batch 和 channel 通常都设置成 1。</p>
 <h4 id="2-2-TF卷积神经网络的实现例"><a href="#2-2-TF卷积神经网络的实现例" class="headerlink" title="2.2. TF卷积神经网络的实现例"></a>2.2. TF卷积神经网络的实现例</h4><p>对 <a href="https://www.cs.toronto.edu/~kriz/cifar.html" title="Title" target="_blank" rel="external">CIFAR-10 数据集</a> 中的图片进行分类。<br>该数据集包含飞机、猫狗和其他物体。先预处理这些图片，然后用所有样本训练一个卷积神经网络。图片需要标准化（normalized），标签需要采用 one-hot 编码。构建卷积（convolution）、最大池化（max pooling）、丢弃（dropout）和完全连接（fully connected）的层。最后在样本图片上看到神经网络的预测结果。</p>
-<p>具体实现不赘述，过程直接看Github，吾辈准确率不高，才57%左右 - <a href="https://github.com/HJTSO/image-classification/blob/master/dlnd_image_classification.ipynb" title="Title" target="_blank" rel="external">Github Link</a> </p>
+<p>具体实现不赘述，过程直接看Github，吾辈准确率不高，才57%左右 - <a href="https://github.com/HJTSO/image-classification/blob/master/dlnd_image_classification.ipynb" title="Title" target="_blank" rel="external">Github Link</a>   </p>
+<h4 id="2-3-卷积神经网络内部一窥"><a href="#2-3-卷积神经网络内部一窥" class="headerlink" title="2.3. 卷积神经网络内部一窥"></a>2.3. 卷积神经网络内部一窥</h4><center><img src="/image/DL/2/CNN.jpg" alt="CNN"></center> 
+
+<hr>
+<p>瑞尔森大学的Adam Harley创建了一个交互式视觉化模型，能够帮助解释卷积神经网络内部每一层是如何工作的：<a href="http://scs.ryerson.ca/~aharley/vis/conv/" title="Title" target="_blank" rel="external">Link</a>   </p>
 <h3 id="3-自编码器（Autoencoder）"><a href="#3-自编码器（Autoencoder）" class="headerlink" title="3. 自编码器（Autoencoder）"></a>3. 自编码器（Autoencoder）</h3><p>自编码器（Autoencoder）由于处理过程中有单元减少，解压缩效果不如MP3与JPEG，但是在图像去噪（Denoising）与降维（dimensionality reduction）方面取得不错的效果。</p>
 <center><img src="/image/DL/2/autoencoder_1.png" alt="CNN"></center> 
 
