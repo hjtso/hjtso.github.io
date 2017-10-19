@@ -16,7 +16,8 @@
     
     
 
-    <meta name="description" content="1. 卷积神经网络简介（CNN）
+    <meta name="description" content="1. 卷积神经网络简介（CNN）原图和公式说明来自：零基础入门深度学习(4) - 卷积神经网络 
+
  
 
 
@@ -25,16 +26,13 @@
 
 
 
-以步幅(stride)为1，依次计算出Feature Map中所有元素的值，计算过程：
-  
-
-
-用例来">
+以步幅(stride)为1，依次计算出">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Deep learning笔记2-CNN卷积神经网络 | H.J.T. Github">
 <meta property="og:url" content="http://yoursite.com/2017/09/16/zh-Deep-learning笔记2-CNN卷积神经网络/zh/index.html">
 <meta property="og:site_name" content="H.J.T. Github">
-<meta property="og:description" content="1. 卷积神经网络简介（CNN）
+<meta property="og:description" content="1. 卷积神经网络简介（CNN）原图和公式说明来自：零基础入门深度学习(4) - 卷积神经网络 
+
  
 
 
@@ -43,11 +41,7 @@
 
 
 
-以步幅(stride)为1，依次计算出Feature Map中所有元素的值，计算过程：
-  
-
-
-用例来">
+以步幅(stride)为1，依次计算出">
 <meta property="og:image" content="http://yoursite.com/image/DL/2/1.png">
 <meta property="og:image" content="http://yoursite.com/image/DL/2/2.png">
 <meta property="og:image" content="http://yoursite.com/image/DL/2/3.gif">
@@ -56,10 +50,12 @@
 <meta property="og:image" content="http://yoursite.com/image/DL/2/CNN.jpg">
 <meta property="og:image" content="http://yoursite.com/image/DL/2/autoencoder_1.png">
 <meta property="og:image" content="http://yoursite.com/image/DL/2/cnnarchitecture.jpg">
-<meta property="og:updated_time" content="2017-09-24T03:08:01.000Z">
+<meta property="og:image" content="http://yoursite.com/image/DL/2/Mask-RCNN.png">
+<meta property="og:updated_time" content="2017-10-19T11:40:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep learning笔记2-CNN卷积神经网络 | H.J.T. Github">
-<meta name="twitter:description" content="1. 卷积神经网络简介（CNN）
+<meta name="twitter:description" content="1. 卷积神经网络简介（CNN）原图和公式说明来自：零基础入门深度学习(4) - 卷积神经网络 
+
  
 
 
@@ -68,11 +64,7 @@
 
 
 
-以步幅(stride)为1，依次计算出Feature Map中所有元素的值，计算过程：
-  
-
-
-用例来">
+以步幅(stride)为1，依次计算出">
 <meta name="twitter:image" content="http://yoursite.com/image/DL/2/1.png">
     
     
@@ -288,7 +280,8 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h3 id="1-卷积神经网络简介（CNN）"><a href="#1-卷积神经网络简介（CNN）" class="headerlink" title="1. 卷积神经网络简介（CNN）"></a>1. 卷积神经网络简介（CNN）</h3><hr>
+    <h3 id="1-卷积神经网络简介（CNN）"><a href="#1-卷积神经网络简介（CNN）" class="headerlink" title="1. 卷积神经网络简介（CNN）"></a>1. 卷积神经网络简介（CNN）</h3><p>原图和公式说明来自：<a href="https://www.zybuluo.com/hanbingtao/note/485480" title="Title" target="_blank" rel="external">零基础入门深度学习(4) - 卷积神经网络</a> </p>
+<hr>
 <center><img src="/image/DL/2/1.png" alt="CNN"></center> 
 
 <hr>
@@ -334,7 +327,8 @@ classes that you can use:
 <p>ksize 和 strides 参数也被构建为四个元素的列表，每个元素对应 input tensor 的一个维度 ([batch, height, width, channels])，对 ksize 和 strides 来说，batch 和 channel 通常都设置成 1。</p>
 <h4 id="2-2-TF卷积神经网络的实现例"><a href="#2-2-TF卷积神经网络的实现例" class="headerlink" title="2.2. TF卷积神经网络的实现例"></a>2.2. TF卷积神经网络的实现例</h4><p>对 <a href="https://www.cs.toronto.edu/~kriz/cifar.html" title="Title" target="_blank" rel="external">CIFAR-10 数据集</a> 中的图片进行分类。<br>该数据集包含飞机、猫狗和其他物体。先预处理这些图片，然后用所有样本训练一个卷积神经网络。图片需要标准化（normalized），标签需要采用 one-hot 编码。构建卷积（convolution）、最大池化（max pooling）、丢弃（dropout）和完全连接（fully connected）的层。最后在样本图片上看到神经网络的预测结果。</p>
 <p>具体实现不赘述，过程直接看Github，吾辈准确率不高，才57%左右 - <a href="https://github.com/HJTSO/image-classification/blob/master/dlnd_image_classification.ipynb" title="Title" target="_blank" rel="external">Github Link</a>   </p>
-<h4 id="2-3-卷积神经网络内部一窥"><a href="#2-3-卷积神经网络内部一窥" class="headerlink" title="2.3. 卷积神经网络内部一窥"></a>2.3. 卷积神经网络内部一窥</h4><center><img src="/image/DL/2/CNN.jpg" alt="CNN"></center> 
+<h4 id="2-3-卷积神经网络内部一窥"><a href="#2-3-卷积神经网络内部一窥" class="headerlink" title="2.3. 卷积神经网络内部一窥"></a>2.3. 卷积神经网络内部一窥</h4><hr>
+<center><img src="/image/DL/2/CNN.jpg" alt="CNN"></center> 
 
 <hr>
 <p>瑞尔森大学的Adam Harley创建了一个交互式视觉化模型，能够帮助解释卷积神经网络内部每一层是如何工作的：<a href="http://scs.ryerson.ca/~aharley/vis/conv/" title="Title" target="_blank" rel="external">Link</a>   </p>
@@ -366,6 +360,24 @@ classes that you can use:
 <li>VGGNet使用例 - Udacity <a href="https://github.com/udacity/cn-deep-learning/blob/master/tutorials/transfer-learning/Transfer_Learning_Solution.ipynb" title="Title" target="_blank" rel="external">Github Link</a> </li>
 </ul>
 <hr>
+<h3 id="5-目标检测（Object-Detection）"><a href="#5-目标检测（Object-Detection）" class="headerlink" title="5. 目标检测（Object Detection）"></a>5. 目标检测（Object Detection）</h3><p>Object Detection是在给定的图片中精确找到物体所在位置，并标注出物体的类别。<br>Object Detection要解决的问题就是物体在哪里Where，是什么What这整个流程的问题。</p>
+<p>但是在现实生活中，问题不是那么简单，物体的尺寸变化范围很大，摆放物体的角度，姿态不定，而且可以出现在图片的任何地方，而且物体的类别还有多种。</p>
+<p>关于目标检测区域建议的演化历史：- <a href="https://blog.athelas.com/a-brief-history-of-cnns-in-image-segmentation-from-r-cnn-to-mask-r-cnn-34ea83205de4" title="Title" target="_blank" rel="external">A Brief History of CNNs</a></p>
+<p>CNN-&gt;RCNN-&gt;Fast-RCNN-&gt;Faster-RCNN-&gt;Mask-RCNN-&gt;…</p>
+<hr>
+<center><img src="/image/DL/2/Mask-RCNN.png" alt="CNN"></center> 
+
+<hr>
+<ul>
+<li><p><a href="https://zhuanlan.zhihu.com/p/27473413" title="Title" target="_blank" rel="external">RCNN</a></p>
+</li>
+<li><p><a href="https://zhuanlan.zhihu.com/p/27473413" title="Title" target="_blank" rel="external">Fast-RCNN</a></p>
+</li>
+<li><p><a href="https://zhuanlan.zhihu.com/p/27473413" title="Title" target="_blank" rel="external">Faster-RCNN</a></p>
+</li>
+<li><p><a href="https://arxiv.org/abs/1703.06870" title="Title" target="_blank" rel="external">Mask-RCNN</a></p>
+</li>
+</ul>
 <h3 id="程序实例（Program-Example）"><a href="#程序实例（Program-Example）" class="headerlink" title="程序实例（Program Example）"></a>程序实例（Program Example）</h3><ul>
 <li><a href="https://github.com/HJTSO/image-classification/blob/master/dlnd_image_classification.ipynb" title="Title" target="_blank" rel="external">Github Link</a> </li>
 </ul>
