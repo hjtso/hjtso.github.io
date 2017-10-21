@@ -52,7 +52,7 @@ W权重矩阵">
 <meta property="og:image" content="http://yoursite.com/image/DL/3/3-2.jpg">
 <meta property="og:image" content="http://yoursite.com/image/DL/3/4-1.png">
 <meta property="og:image" content="http://yoursite.com/image/DL/3/4-2.png">
-<meta property="og:updated_time" content="2017-10-19T12:51:17.000Z">
+<meta property="og:updated_time" content="2017-10-21T13:49:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep learning笔记3-RNN循环神经网络 | H.J.T. Github">
 <meta name="twitter:description" content="1. 循环神经网络（RNN）原图和公式说明来自：零基础入门深度学习(5) - 循环神经网络 
@@ -344,12 +344,13 @@ classes that you can use:
 
 <hr>
 <p>\begin{align}<br>g(\mathbf{x})=\sigma(W\mathbf{x}+\mathbf{b})<br>\end{align}</p>
-<p>遗忘门（forget gate）决定了上一时刻的单元状态有多少保留到当前时刻：</p>
+<p>● 遗忘门（forget gate）决定了上一时刻的单元状态有多少保留到当前时刻：</p>
 <p>\begin{align}<br>\mathbf{f}_t=\sigma(W_f\cdot[\mathbf{h}_{t-1},\mathbf{x}_t]+\mathbf{b}_f)<br>\end{align}</p>
-<p>输入门（input gate）决定了当前时刻网络的输入有多少保存到单元状态：</p>
+<p>● 输入门（input gate）决定了当前时刻网络的输入有多少保存到单元状态：</p>
 <p>\begin{align}<br>\mathbf{i}_t=\sigma(W_i\cdot[\mathbf{h}_{t-1},\mathbf{x}_t]+\mathbf{b}_i)<br>\end{align}</p>
-<p>输出门（output gate）来控制单元状态有多少输出到LSTM的当前输出值：</p>
+<p>● 输出门（output gate）来控制单元状态有多少输出到LSTM的当前输出值：</p>
 <p>\begin{align}<br>\mathbf{\tilde{c}}_t=\tanh(W_c\cdot[\mathbf{h}_{t-1},\mathbf{x}_t]+\mathbf{b}_c)<br>\end{align}</p>
+<p>推荐阅读 - <a href="http://blog.qiangzhonghua.com/blog/tech/lstm#15-%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98---%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E5%85%AC%E5%BC%8F" title="Title" target="_blank" rel="external">强的笔记-我对LSTM的理解</a></p>
 <hr>
 <h4 id="2-2-长短时记忆网络的训练"><a href="#2-2-长短时记忆网络的训练" class="headerlink" title="2.2. 长短时记忆网络的训练"></a>2.2. 长短时记忆网络的训练</h4><p>先前向传播，再反向传播，利用链式求导计算损失函数对每个权重的偏导数（梯度），然后再根据梯度下降公式更新权重w。</p>
 <p>第l层t时刻的误差项值沿两个方向传播：</p>
