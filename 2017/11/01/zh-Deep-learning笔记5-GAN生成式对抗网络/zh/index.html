@@ -23,7 +23,8 @@
  
 
 
-訓練データを学習し、それらのデータと似たような新しいデータを生成するモデルのことを生成モデルと呼びます。別の言い方をすると、訓練デ">
+内容部分来自：はじめてのGAN 
+訓練データを学習し、それらのデータと似たような新しいデータを生成するモデルのことを生成モデルと呼">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Deep learning笔记5-GAN生成式对抗网络 | H.J.T. Github">
 <meta property="og:url" content="http://yoursite.com/2017/11/01/zh-Deep-learning笔记5-GAN生成式对抗网络/zh/index.html">
@@ -35,12 +36,16 @@
  
 
 
-訓練データを学習し、それらのデータと似たような新しいデータを生成するモデルのことを生成モデルと呼びます。別の言い方をすると、訓練デ">
+内容部分来自：はじめてのGAN 
+訓練データを学習し、それらのデータと似たような新しいデータを生成するモデルのことを生成モデルと呼">
 <meta property="og:image" content="http://yoursite.com/image/DL/5/1-1.jpg">
 <meta property="og:image" content="http://yoursite.com/image/DL/5/1-2.jpg">
+<meta property="og:image" content="http://yoursite.com/image/DL/5/1-3.png">
+<meta property="og:image" content="http://yoursite.com/image/DL/5/1-4.png">
+<meta property="og:image" content="http://yoursite.com/image/DL/5/1-5.png">
 <meta property="og:image" content="http://yoursite.com/image/DL/5/2-1.png">
 <meta property="og:image" content="http://yoursite.com/image/DL/5/2-2.png">
-<meta property="og:updated_time" content="2017-10-23T12:26:44.000Z">
+<meta property="og:updated_time" content="2017-10-23T13:12:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep learning笔记5-GAN生成式对抗网络 | H.J.T. Github">
 <meta name="twitter:description" content="1. 生成式对抗网络（GAN）GAN（Generative Adversarial Network）的思想：生成器和鉴别器两个网络彼此博弈。
@@ -50,7 +55,8 @@
  
 
 
-訓練データを学習し、それらのデータと似たような新しいデータを生成するモデルのことを生成モデルと呼びます。別の言い方をすると、訓練デ">
+内容部分来自：はじめてのGAN 
+訓練データを学習し、それらのデータと似たような新しいデータを生成するモデルのことを生成モデルと呼">
 <meta name="twitter:image" content="http://yoursite.com/image/DL/5/1-1.jpg">
     
     
@@ -273,6 +279,7 @@ classes that you can use:
 <center><img src="/image/DL/5/1-1.jpg" alt="GAN"></center> 
 
 <hr>
+<p>内容部分来自：<a href="https://elix-tech.github.io/ja/2017/02/06/gan.html" title="Title" target="_blank" rel="external">はじめてのGAN</a> </p>
 <p>訓練データを学習し、それらのデータと似たような新しいデータを生成するモデルのことを生成モデルと呼びます。別の言い方をすると、訓練データの分布と生成データの分布が一致するように学習していくようなモデルです。</p>
 <p>GANではgeneratorとdiscriminatorという２つのネットワークが登場します。Generatorは訓練データと同じようなデータを生成しようとします。一方、discriminatorはデータが訓練データから来たものか、それとも生成モデルから来たものかを識別します。</p>
 <hr>
@@ -281,11 +288,25 @@ classes that you can use:
 <hr>
 <p>如上图所示，生成对抗网络会训练并更新判别分布，更新判别器后就能将数据真实分布从生成分布中判别出来。经过若干次训练后，如果 G 和 D 有足够的复杂度，那么它们就会到达一个均衡点。这个时候生成器的概率密度函数等于真实数据的概率密度函数，也即生成的数据和真实数据是一样的。在均衡点上 D 和 G 都不能得到进一步提升，并且判别器无法判断数据到底是来自真实样本还是伪造的数据，即 D（x）= 1/2。</p>
 <p>GAN学习的表征可用于多种应用，包括图像合成、语义图像编辑、风格迁移、图像超分辨率技术和分类。</p>
-<p>内容来自：<a href="https://zhuanlan.zhihu.com/p/30346797" title="Title" target="_blank" rel="external">生成对抗网络综述：从架构到训练技巧</a> </p>
+<p>eg. ベッドルームの画像のデータセットを使って学習した結果です。一見本物と見間違ってしまいそうなレベルの画像を生成できていることが分かります。</p>
+<hr>
+<center><img src="/image/DL/5/1-3.png" alt="GAN"></center> 
+
+<hr>
+<p>eg. Word2Vecという単語ベクトルで「王様」-「男」+「女」=「女王」という演算ができることは有名ですが、GANにおける入力であるzzベクトルを使っても同様の演算を行うことができます。下の例では、「サングラスをかけた男」-「男」+「女」=「サングラスをかけた女」という演算を行っています。</p>
+<hr>
+<center><img src="/image/DL/5/1-4.png" alt="GAN"></center> 
+
+<hr>
+<p>GAN的类别 - 内容来自：<a href="https://zhuanlan.zhihu.com/p/30346797" title="Title" target="_blank" rel="external">生成对抗网络综述：从架构到训练技巧</a> </p>
 <h4 id="1-1-全连接-GAN"><a href="#1-1-全连接-GAN" class="headerlink" title="1.1. 全连接 GAN"></a>1.1. 全连接 GAN</h4><p>首个 GAN 架构在生成器与鉴别器上皆使用全连接神经网络。这种架构类型被应用于相对简单的图像数据库，即 MNIST（手写数字）、CIFAR-10（自然图像）和多伦多人脸数据集（TFD）。</p>
 <h4 id="1-2-卷积-GAN"><a href="#1-2-卷积-GAN" class="headerlink" title="1.2.  卷积 GAN"></a>1.2.  卷积 GAN</h4><p>● LAPGAN拉普拉斯金字塔形对抗网络（Laplacian pyramid GAN）</p>
 <p>真值图像本身被分解成拉普拉斯金字塔（Laplacian pyramid），并且条件性卷积 GAN 被训练在给定上一层的情况下生成每一层。</p>
 <p>● DCGAN（Deep Convolutional GAN）</p>
+<hr>
+<center><img src="/image/DL/5/1-5.png" alt="GAN"></center> 
+
+<hr>
 <p>DCGAN允许训练一对深度卷积生成器和判别器网络。在训练中使用带步长的卷积（strided convolution）和小步长卷积（fractionally-strided convolution），并在训练中学习空间下采样和上采样算子。</p>
 <h4 id="1-3-条件-GAN"><a href="#1-3-条件-GAN" class="headerlink" title="1.3. 条件 GAN"></a>1.3. 条件 GAN</h4><p>通过将生成器和判别器改造成条件类（class-conditional）而将（2D）GAN 框架扩展成条件设置。条件 GNN 的优势在于可以对多形式的数据生成提供更好的表征。条件 GAN 和 InfoGAN[16] 是平行的，它可以将噪声源分解为不可压缩源和一个「隐编码」（latent code），并可以通过最大化隐编码和生成器之间的交互信息而发现变化的隐藏因子。这个隐编码可用于在完全无监督的数据中发现目标类，即使这个隐编码是不明确的。由 InfoGAN 学到的表征看起来像是具备语义特征的，可以处理图貌中的复杂纠缠因素（包括姿势变化、光照和面部图像的情绪内容）。</p>
 <h4 id="1-4-GAN-推断模型"><a href="#1-4-GAN-推断模型" class="headerlink" title="1.4. GAN 推断模型"></a>1.4. GAN 推断模型</h4><p>GAN 的初始形式无法将给定的输入 x 映射为隐空间中的向量（在 GAN 的文献中，这通常被称为一种推断机制）。人们提出了几种反转预训练 GAN 的生成器的技术，比如各自独立提出的对抗性学习推断（Adversarially Learned Inference，ALI）和双向 GAN（Bidirectional GANs），它们能提供简单而有效的扩展，通过加入一个推断网络，使判别器共同测试数据空间和隐空间。</p>
