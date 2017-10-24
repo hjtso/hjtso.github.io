@@ -22,7 +22,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/11/15/zh-Reinforcement-Learning笔记5-Monte-Carlo/zh/index.html">
 <meta property="og:site_name" content="H.J.T. Github">
 <meta property="og:description" content="Bellman最优解策略 - 蒙特卡罗方法（Monte Carlo Methods）蒙特卡罗方法又叫统计模拟方法，它使用随机数（或伪随机数）来解决计算的问题，是一类重要的数值计算方法。该方法的名字来源于世界著名的赌城蒙特卡罗，而蒙特卡罗方法正是以概率为基础的方法。一个简单的例子可以解释蒙特卡罗方法，假设我们需要计算一个不规则图形的面积，那么图形的不规则程度和分析性计算（比如积分）的复杂程度是成正比">
-<meta property="og:updated_time" content="2017-10-24T10:29:31.000Z">
+<meta property="og:updated_time" content="2017-10-24T10:49:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Reinforcement Learning笔记5-Monte Carlo | H.J.T. Github">
 <meta name="twitter:description" content="Bellman最优解策略 - 蒙特卡罗方法（Monte Carlo Methods）蒙特卡罗方法又叫统计模拟方法，它使用随机数（或伪随机数）来解决计算的问题，是一类重要的数值计算方法。该方法的名字来源于世界著名的赌城蒙特卡罗，而蒙特卡罗方法正是以概率为基础的方法。一个简单的例子可以解释蒙特卡罗方法，假设我们需要计算一个不规则图形的面积，那么图形的不规则程度和分析性计算（比如积分）的复杂程度是成正比">
@@ -246,6 +246,10 @@ classes that you can use:
 <p>那么什么是经验呢？经验其实就是训练样本。比如在初始状态s，遵循策略π，最终获得了总回报R，这就是一个样本。如果我们有许多这样的样本，就可以估计在状态s下，遵循策略π的期望回报，也就是状态值函数Vπ(s)了。蒙特卡罗方法就是依靠样本的平均回报来解决增强学习问题的。</p>
 <h3 id="2-蒙特卡罗策略估计-Monte-Carlo-Policy-evalution"><a href="#2-蒙特卡罗策略估计-Monte-Carlo-Policy-evalution" class="headerlink" title="2. 蒙特卡罗策略估计(Monte Carlo Policy evalution)"></a>2. 蒙特卡罗策略估计(Monte Carlo Policy evalution)</h3><p>首先考虑用蒙特卡罗方法来学习状态值函数Vπ(s)。如上所述，估计Vπ(s)的一个明显的方法是对于所有到达过该状态的回报取平均值。这里又分为first-visit MC methods和every-visit MC methods。这里，我们只考虑first MC methods，即在一个episode内，我们只记录s的第一次访问，并对它取平均回报。</p>
 <h3 id="参考资料（Reference）"><a href="#参考资料（Reference）" class="headerlink" title="参考资料（Reference）"></a>参考资料（Reference）</h3><ul>
+<li><p><a href="https://mpatacchiola.github.io/blog/2016/12/09/dissecting-reinforcement-learning.html" title="Title" target="_blank" rel="external">Dissecting Reinforcement Learning-Part.1</a> </p>
+</li>
+<li><p><a href="https://studywolf.wordpress.com/2012/11/25/reinforcement-learning-q-learning-and-exploration/" title="Title" target="_blank" rel="external">REINFORCEMENT LEARNING PART 1: Q-LEARNING AND EXPLORATION</a> </p>
+</li>
 <li><p><a href="https://qiita.com/Hironsan/items/56f6c0b2f4cfd28dd906" title="Title" target="_blank" rel="external">Pythonではじめる強化学習</a> </p>
 </li>
 <li><p><a href="https://qiita.com/icoxfog417/items/242439ecd1a477ece312" title="Title" target="_blank" rel="external">ゼロからDeepまで学ぶ強化学習</a> </p>
