@@ -30,7 +30,7 @@
 <meta property="og:image" content="http://yoursite.com/image/RL/3/2.jpg">
 <meta property="og:image" content="http://yoursite.com/image/RL/3/3.jpg">
 <meta property="og:image" content="http://yoursite.com/image/RL/3/4.png">
-<meta property="og:updated_time" content="2017-10-24T10:49:19.000Z">
+<meta property="og:updated_time" content="2017-10-25T13:33:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Reinforcement Learning笔记3-Dynamic Program | H.J.T. Github">
 <meta name="twitter:description" content="Bellman最优解策略 - 动态规划法（Dynamic Programming Methods）动态规划是一种通过把复杂问题划分为子问题，并对自问题进行求解，最后把子问题的解结合起来解决原问题的方法。
@@ -297,7 +297,8 @@ classes that you can use:
 <li><p>输出：最优状态价值函数V*和最优策略π</p>
 </li>
 </ul>
-<p>● 策略估计(Policy Evaluation)与策略改进(Policy Improvement)解决的是 Prediction 问题，使用了贝尔曼期望方程（Bellman Expectation Equation）</p>
+<p>● 策略估计(Policy Evaluation)解决的是 Prediction 问题，使用了贝尔曼期望方程（Bellman Expectation Equation）</p>
+<p>● 策略改进(Policy Improvement)解决的是 Control 问题，实质是在迭代策略评估之后加一个选择 Policy 的过程，使用的是贝尔曼期望方程和贪心算法</p>
 <p>● 策略迭代（Policy Iteration）解决的是 Control 问题，实质是在迭代策略评估之后加一个选择 Policy 的过程，使用的是贝尔曼期望方程和贪心算法</p>
 <p>● 价值迭代（Value Iteration） 解决的是 Control 问题，它并没有直接计算策略（Policy），而是在得到最优的基于策略的价值函数之后推导出最优的 Policy，使用的是贝尔曼最优化方程（Bellman Optimality Equation）</p>
 <h3 id="参考资料（Reference）"><a href="#参考资料（Reference）" class="headerlink" title="参考资料（Reference）"></a>参考资料（Reference）</h3><ul>
