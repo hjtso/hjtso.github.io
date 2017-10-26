@@ -16,25 +16,33 @@
     
     
 
-    <meta name="description" content="Bellman最优解策略 - 时间差分法（Temporal Difference）在这里，强化学习算法可以分为在策略(on-policy)和离策略(off-policy)两类。
-● Q-learning属于离策略(off-policy)算法。
-● Sarsa属于在策略(on-policy)算法。
-1. Q-learningDQN（Deep Q-learning）Q-learning中因为需要下一状">
+    <meta name="description" content="Bellman最优解策略 - 时间差分法（Temporal Difference）蒙特卡洛算法需要采样完成一个轨迹之后，才能进行值估计（value estimation），这样蒙特卡洛速度很慢，主要原因在于蒙特卡洛没有充分的利用强化学习任务的 MDP 结构。但是，TD 充分利用了 “MC”和 动态规划的思想，做到了更加高效率的免模型学习。
+强化学习算法可以分为在同策略(on-policy)和异策略">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Reinforcement Learning笔记5-Temporal Diff | H.J.T. Github">
 <meta property="og:url" content="http://yoursite.com/2017/11/15/zh-Reinforcement-Learning笔记5-Temporal-Diff/zh/index.html">
 <meta property="og:site_name" content="H.J.T. Github">
-<meta property="og:description" content="Bellman最优解策略 - 时间差分法（Temporal Difference）在这里，强化学习算法可以分为在策略(on-policy)和离策略(off-policy)两类。
-● Q-learning属于离策略(off-policy)算法。
-● Sarsa属于在策略(on-policy)算法。
-1. Q-learningDQN（Deep Q-learning）Q-learning中因为需要下一状">
-<meta property="og:updated_time" content="2017-10-25T13:07:28.000Z">
+<meta property="og:description" content="Bellman最优解策略 - 时间差分法（Temporal Difference）蒙特卡洛算法需要采样完成一个轨迹之后，才能进行值估计（value estimation），这样蒙特卡洛速度很慢，主要原因在于蒙特卡洛没有充分的利用强化学习任务的 MDP 结构。但是，TD 充分利用了 “MC”和 动态规划的思想，做到了更加高效率的免模型学习。
+强化学习算法可以分为在同策略(on-policy)和异策略">
+<meta property="og:image" content="http://yoursite.com/image/RL/5/0-0.png">
+<meta property="og:image" content="http://yoursite.com/image/RL/5/1-1.png">
+<meta property="og:image" content="http://yoursite.com/image/RL/5/1-2.png">
+<meta property="og:image" content="http://yoursite.com/image/RL/5/1-3.png">
+<meta property="og:image" content="http://yoursite.com/image/RL/5/1-4.png">
+<meta property="og:image" content="http://yoursite.com/image/RL/5/2-1.png">
+<meta property="og:image" content="http://yoursite.com/image/RL/5/2-2.png">
+<meta property="og:image" content="http://yoursite.com/image/RL/5/3-1.png">
+<meta property="og:image" content="http://yoursite.com/image/RL/5/3-2.png">
+<meta property="og:image" content="http://yoursite.com/image/RL/5/4-1.png">
+<meta property="og:image" content="http://yoursite.com/image/RL/5/4-2.png">
+<meta property="og:image" content="http://yoursite.com/image/RL/5/4-3.png">
+<meta property="og:image" content="http://yoursite.com/image/RL/5/4-4.png">
+<meta property="og:updated_time" content="2017-10-26T13:34:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Reinforcement Learning笔记5-Temporal Diff | H.J.T. Github">
-<meta name="twitter:description" content="Bellman最优解策略 - 时间差分法（Temporal Difference）在这里，强化学习算法可以分为在策略(on-policy)和离策略(off-policy)两类。
-● Q-learning属于离策略(off-policy)算法。
-● Sarsa属于在策略(on-policy)算法。
-1. Q-learningDQN（Deep Q-learning）Q-learning中因为需要下一状">
+<meta name="twitter:description" content="Bellman最优解策略 - 时间差分法（Temporal Difference）蒙特卡洛算法需要采样完成一个轨迹之后，才能进行值估计（value estimation），这样蒙特卡洛速度很慢，主要原因在于蒙特卡洛没有充分的利用强化学习任务的 MDP 结构。但是，TD 充分利用了 “MC”和 动态规划的思想，做到了更加高效率的免模型学习。
+强化学习算法可以分为在同策略(on-policy)和异策略">
+<meta name="twitter:image" content="http://yoursite.com/image/RL/5/0-0.png">
     
     
     
@@ -249,12 +257,85 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h4 id="Bellman最优解策略-时间差分法（Temporal-Difference）"><a href="#Bellman最优解策略-时间差分法（Temporal-Difference）" class="headerlink" title="Bellman最优解策略 - 时间差分法（Temporal Difference）"></a>Bellman最优解策略 - 时间差分法（Temporal Difference）</h4><p>在这里，强化学习算法可以分为在策略(on-policy)和离策略(off-policy)两类。</p>
+    <h4 id="Bellman最优解策略-时间差分法（Temporal-Difference）"><a href="#Bellman最优解策略-时间差分法（Temporal-Difference）" class="headerlink" title="Bellman最优解策略 - 时间差分法（Temporal Difference）"></a>Bellman最优解策略 - 时间差分法（Temporal Difference）</h4><p>蒙特卡洛算法需要采样完成一个轨迹之后，才能进行值估计（value estimation），这样蒙特卡洛速度很慢，主要原因在于蒙特卡洛没有充分的利用强化学习任务的 MDP 结构。但是，TD 充分利用了 “MC”和 动态规划的思想，做到了更加高效率的免模型学习。</p>
+<p>强化学习算法可以分为在同策略(on-policy)和异策略(off-policy)两类：</p>
+<p>若行动策略和评估及改善的策略是同一个策略，称之为on-policy,可翻译为同策略。</p>
+<p>若行动策略和评估及改善的策略是不同的策略，称之为off-policy,可翻译为异策略。</p>
 <p>● Q-learning属于离策略(off-policy)算法。</p>
 <p>● Sarsa属于在策略(on-policy)算法。</p>
-<h3 id="1-Q-learning"><a href="#1-Q-learning" class="headerlink" title="1. Q-learning"></a>1. Q-learning</h3><h4 id="DQN（Deep-Q-learning）"><a href="#DQN（Deep-Q-learning）" class="headerlink" title="DQN（Deep Q-learning）"></a>DQN（Deep Q-learning）</h4><p>Q-learning中因为需要下一状态的所有动作的最大Q，loss的也有个特点:网络要多前向计算一次，才能得到下一状态的所有动作的Q。</p>
-<p>也是因为这个loss的原因，等于说是把CNN用作生成Q的一个函数了。原来的质量表达Q是个矩阵，参数少，现在的用深度网络了，就叫深度质量网络（DQN），其实叫做DQ-learning更合适。</p>
-<h3 id="2-Sarsa"><a href="#2-Sarsa" class="headerlink" title="2. Sarsa"></a>2. Sarsa</h3><p>sarsa算法估计的是动作值函数(Q函数)而非状态值函数。</p>
+<p>本文内容来自<a href="https://zhuanlan.zhihu.com/morvan" title="Title" target="_blank" rel="external">知乎 - 莫烦</a> ，以小时候写作业为例子，看看TD是如何来决策：</p>
+<hr>
+<center><img src="/image/RL/5/0-0.png" alt="RL"></center> 
+
+<hr>
+<h3 id="1-Q-learning"><a href="#1-Q-learning" class="headerlink" title="1. Q-learning"></a>1. Q-learning</h3><p>● 感性认识：内容来自 - <a href="https://zhuanlan.zhihu.com/p/24808797" title="Title" target="_blank" rel="external">什么是 Q-Learning - 莫烦</a> </p>
+<h4 id="1-1-Q-Learning-决策"><a href="#1-1-Q-Learning-决策" class="headerlink" title="1.1. Q-Learning 决策"></a>1.1. Q-Learning 决策</h4><hr>
+<center><img src="/image/RL/5/1-1.png" alt="RL"></center> 
+
+<hr>
+<h4 id="1-2-Q-Learning-更新"><a href="#1-2-Q-Learning-更新" class="headerlink" title="1.2. Q-Learning 更新"></a>1.2. Q-Learning 更新</h4><hr>
+<center><img src="/image/RL/5/1-2.png" alt="RL"></center> 
+
+<hr>
+<h4 id="1-3-Q-Learning-整体算法"><a href="#1-3-Q-Learning-整体算法" class="headerlink" title="1.3. Q-Learning 整体算法"></a>1.3. Q-Learning 整体算法</h4><hr>
+<center><img src="/image/RL/5/1-3.png" alt="RL"></center> 
+
+<hr>
+<h4 id="1-4-Q-Learning-中的-Lambda"><a href="#1-4-Q-Learning-中的-Lambda" class="headerlink" title="1.4. Q-Learning 中的 Lambda"></a>1.4. Q-Learning 中的 Lambda</h4><hr>
+<center><img src="/image/RL/5/1-4.png" alt="RL"></center> 
+
+<hr>
+<h4 id="DQN（Deep-Q-learning）"><a href="#DQN（Deep-Q-learning）" class="headerlink" title="DQN（Deep Q-learning）"></a>DQN（Deep Q-learning）</h4><p>Q-learning中因为需要下一状态的所有动作的最大Q，loss的也有个特点:网络要多前向计算一次，才能得到下一状态的所有动作的Q。也是因为这个loss的原因，这里的DQN等于说是把CNN用作生成Q的一个函数。原来的质量表达Q是个矩阵，参数少，现在的用深度网络，就叫深度质量网络（DQN）。</p>
+<h3 id="2-Sarsa"><a href="#2-Sarsa" class="headerlink" title="2. Sarsa"></a>2. Sarsa</h3><p>● 感性认识：内容来自 - <a href="https://zhuanlan.zhihu.com/p/24860793" title="Title" target="_blank" rel="external">什么是 Sarsa - 莫烦</a> </p>
+<p>sarsa算法估计的是动作值函数(Q函数)而非状态值函数。</p>
+<h4 id="2-1-Sarsa-决策"><a href="#2-1-Sarsa-决策" class="headerlink" title="2.1. Sarsa 决策"></a>2.1. Sarsa 决策</h4><hr>
+<center><img src="/image/RL/5/2-1.png" alt="RL"></center> 
+
+<hr>
+<p>Sarsa 的决策部分和 Q-learning 一模一样, 因为使用的是 Q 表的形式决策, 所以在 Q 表中挑选值较大的动作值施加在环境中来换取奖惩. 但是不同的地方在于 Sarsa 的更新方式是不一样的。</p>
+<h4 id="2-2-Sarsa-更新行为准则"><a href="#2-2-Sarsa-更新行为准则" class="headerlink" title="2.2. Sarsa 更新行为准则"></a>2.2. Sarsa 更新行为准则</h4><hr>
+<center><img src="/image/RL/5/2-2.png" alt="RL"></center> 
+
+<hr>
+<h3 id="3-Sarsa-VS-Q-learning"><a href="#3-Sarsa-VS-Q-learning" class="headerlink" title="3. Sarsa VS Q-learning"></a>3. Sarsa VS Q-learning</h3><p>内容来自：<a href="https://zhuanlan.zhihu.com/p/24860793" title="Title" target="_blank" rel="external">什么是 Sarsa - 莫烦</a> </p>
+<hr>
+<center><img src="/image/RL/5/3-1.png" alt="RL"></center> 
+
+<hr>
+<p>从算法来看, 这就是他们两最大的不同之处了. 因为 Sarsa 是说到做到型, 所以我们也叫他 on-policy在线学习, 学着自己在做的事情. 而 Q learning 是说到但并不一定做到, 所以它也叫作 Off-policy, 离线学习. 而因为有了 maxQ, Q-learning 也是一个特别勇敢的算法。</p>
+<hr>
+<center><img src="/image/RL/5/3-2.png" alt="RL"></center> 
+
+<hr>
+<p>为什么说他勇敢呢, 因为 Q learning 机器人 永远都会选择最近的一条通往成功的道路, 不管这条路会有多危险. 而 Sarsa 则是相当保守, 他会选择离危险远远的, 拿到宝藏是次要的, 保住自己的小命才是王道. 这就是使用 Sarsa 方法的不同之处。</p>
+<p>● 开源推荐：<a href="https://github.com/openai/gym" title="Title" target="_blank" rel="external">OpenAI Gym</a> </p>
+<h3 id="4-时间差分法（TD）VS-蒙特卡罗（-MC）"><a href="#4-时间差分法（TD）VS-蒙特卡罗（-MC）" class="headerlink" title="4. 时间差分法（TD）VS 蒙特卡罗（ MC）"></a>4. 时间差分法（TD）VS 蒙特卡罗（ MC）</h3><p>内容来自：<a href="https://www.zhihu.com/question/62388365/answer/218012513" title="Title" target="_blank" rel="external">知乎：强化学习中时间差分(TD)和蒙特卡洛(MC)方法各自的优劣？- 远方的梦回答</a> </p>
+<p>TD对应的sarsa/qlearning和MC对应的control算法进行比较:</p>
+<p>● 1. MC计算量更大，更新缓慢。</p>
+<p>可以这样理解：对MC而言，其return如下：</p>
+<hr>
+<center><img src="/image/RL/5/4-1.png" alt="RL"></center> 
+
+<hr>
+<p>所以MC必须在整轮episode迭代结束后进行更新(也就是一盘围棋要下完才更新一次)，而TD(0)在下一个状态s(t+1)后就可以进行更新,其return如下：</p>
+<hr>
+<center><img src="/image/RL/5/4-2.png" alt="RL"></center> 
+
+<hr>
+<p>● 2.MC不能用于continuous task（比如倒立摆）， 而TD(0)可以：理由同上。</p>
+<p>● 3.相反于第二点，MC能用于一些围棋之类的规划较深的任务。</p>
+<p>这个“深”字体现在：先阶段某个action对以后未来的action决策都有较大的影响（象棋，围棋之类的，想必深有体会）。而对于倒立摆这种问题，我现在让它向左的这个决策对于其1分钟后而言，其实基本没什么关系。参考下面两张图：</p>
+<p>图片来自：<a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/MC-TD.pdf" title="Title" target="_blank" rel="external">Model-Free Prediction</a> </p>
+<p> <strong>蒙特卡罗（ MC）：</strong></p>
+<hr>
+<center><img src="/image/RL/5/4-3.png" alt="RL"></center> 
+
+<hr>
+<p> <strong>时间差分法（TD）：</strong></p>
+<hr>
+<center><img src="/image/RL/5/4-4.png" alt="RL"></center> 
+
+<hr>
 <h3 id="参考资料（Reference）"><a href="#参考资料（Reference）" class="headerlink" title="参考资料（Reference）"></a>参考资料（Reference）</h3><ul>
 <li><p><a href="https://mpatacchiola.github.io/blog/2016/12/09/dissecting-reinforcement-learning.html" title="Title" target="_blank" rel="external">Dissecting Reinforcement Learning-Part.1</a> </p>
 </li>
@@ -263,8 +344,6 @@ classes that you can use:
 <li><p><a href="https://qiita.com/Hironsan/items/56f6c0b2f4cfd28dd906" title="Title" target="_blank" rel="external">Pythonではじめる強化学習</a> </p>
 </li>
 <li><p><a href="https://qiita.com/icoxfog417/items/242439ecd1a477ece312" title="Title" target="_blank" rel="external">ゼロからDeepまで学ぶ強化学習</a> </p>
-</li>
-<li><p><a href="https://zhuanlan.zhihu.com/p/25319023?utm_source=tuicool&amp;utm_medium=referral" title="Title" target="_blank" rel="external">强化学习知识整理</a> </p>
 </li>
 <li><p><a href="http://www.cnblogs.com/jinxulin/p/5116332.html" title="Title" target="_blank" rel="external">时间差分学习(Q learning,Sarsa learning)</a> </p>
 </li>
