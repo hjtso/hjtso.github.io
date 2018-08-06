@@ -16,19 +16,19 @@
     
     
 
-    <meta name="description" content="1. ファイルをコンパイルする(eg: hello.cpp)● $eosiocpp-ohello.wasthello.cpp● $eosiocpp-ghello.abihello.cpp
-2. アカウントを作成する$cleoscreateaccounteosiohello.codeEOS7ijWCBmoXBi3CgtK7DJxentZZeTkeUnaSDvyro9dq7Sd1C3dC4EOS7ij">
+    <meta name="description" content="1. コントラクトファイルを作成する● eosiocpp -n hello（パス：/opt/eosio/bin/data-dir/contracts）（チェック：docker exec -it docker_nodeosd_1 ls /hello）
+2. ファイルをコンパイルする● eosio cpp -o hello.wast hello.cpp● eosio cpp -g hello.abi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EOSのDAPP開発流れ | H.J.T. Github">
 <meta property="og:url" content="http://yoursite.com/2018/07/09/ja-EOSのDAPP開発流れ的副本/ja/index.html">
 <meta property="og:site_name" content="H.J.T. Github">
-<meta property="og:description" content="1. ファイルをコンパイルする(eg: hello.cpp)● $eosiocpp-ohello.wasthello.cpp● $eosiocpp-ghello.abihello.cpp
-2. アカウントを作成する$cleoscreateaccounteosiohello.codeEOS7ijWCBmoXBi3CgtK7DJxentZZeTkeUnaSDvyro9dq7Sd1C3dC4EOS7ij">
-<meta property="og:updated_time" content="2018-07-09T14:12:03.000Z">
+<meta property="og:description" content="1. コントラクトファイルを作成する● eosiocpp -n hello（パス：/opt/eosio/bin/data-dir/contracts）（チェック：docker exec -it docker_nodeosd_1 ls /hello）
+2. ファイルをコンパイルする● eosio cpp -o hello.wast hello.cpp● eosio cpp -g hello.abi">
+<meta property="og:updated_time" content="2018-08-06T13:32:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EOSのDAPP開発流れ | H.J.T. Github">
-<meta name="twitter:description" content="1. ファイルをコンパイルする(eg: hello.cpp)● $eosiocpp-ohello.wasthello.cpp● $eosiocpp-ghello.abihello.cpp
-2. アカウントを作成する$cleoscreateaccounteosiohello.codeEOS7ijWCBmoXBi3CgtK7DJxentZZeTkeUnaSDvyro9dq7Sd1C3dC4EOS7ij">
+<meta name="twitter:description" content="1. コントラクトファイルを作成する● eosiocpp -n hello（パス：/opt/eosio/bin/data-dir/contracts）（チェック：docker exec -it docker_nodeosd_1 ls /hello）
+2. ファイルをコンパイルする● eosio cpp -o hello.wast hello.cpp● eosio cpp -g hello.abi">
     
     
     
@@ -248,15 +248,16 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h4 id="1-ファイルをコンパイルする-eg-hello-cpp"><a href="#1-ファイルをコンパイルする-eg-hello-cpp" class="headerlink" title="1. ファイルをコンパイルする(eg: hello.cpp)"></a>1. ファイルをコンパイルする(eg: hello.cpp)</h4><p>● $eosiocpp-ohello.wasthello.cpp<br>● $eosiocpp-ghello.abihello.cpp</p>
-<h4 id="2-アカウントを作成する"><a href="#2-アカウントを作成する" class="headerlink" title="2. アカウントを作成する"></a>2. アカウントを作成する</h4><p>$cleoscreateaccounteosiohello.codeEOS7ijWCBmoXBi3CgtK7DJxentZZeTkeUnaSDvyro9dq7Sd1C3dC4EOS7ijWCBmoXBi3CgtK7DJxentZZeTkeUnaSDvyro9dq7Sd1C3dC4…</p>
-<h4 id="3-コントラクトをマイグレートする"><a href="#3-コントラクトをマイグレートする" class="headerlink" title="3. コントラクトをマイグレートする"></a>3. コントラクトをマイグレートする</h4><p>● cleossetcontracthello.code../hello-phello.code</p>
-<h4 id="4-コントラクトを呼び出す"><a href="#4-コントラクトを呼び出す" class="headerlink" title="4. コントラクトを呼び出す"></a>4. コントラクトを呼び出す</h4><p>● cleospushactionhello.codehi’[“user”]’-puser</p>
+    <h4 id="1-コントラクトファイルを作成する"><a href="#1-コントラクトファイルを作成する" class="headerlink" title="1. コントラクトファイルを作成する"></a>1. コントラクトファイルを作成する</h4><p>● eosiocpp -n hello<br>（パス：/opt/eosio/bin/data-dir/contracts）<br>（チェック：docker exec -it docker_nodeosd_1 ls /hello）</p>
+<h4 id="2-ファイルをコンパイルする"><a href="#2-ファイルをコンパイルする" class="headerlink" title="2. ファイルをコンパイルする"></a>2. ファイルをコンパイルする</h4><p>● eosio cpp -o hello.wast hello.cpp<br>● eosio cpp -g hello.abi hello.cpp</p>
+<h4 id="3-コントラクトをマイグレートする"><a href="#3-コントラクトをマイグレートする" class="headerlink" title="3. コントラクトをマイグレートする"></a>3. コントラクトをマイグレートする</h4><p>● cleos set contract eosio /hello/ /hello/hello.wast /hello/hello.abi -p eosio@active</p>
+<h4 id="4-コントラクトを呼び出す"><a href="#4-コントラクトを呼び出す" class="headerlink" title="4. コントラクトを呼び出す"></a>4. コントラクトを呼び出す</h4><p>● cleos push action hello hi ‘[“user”]’ -p eosio@active </p>
 <hr>
 <h5 id="Githubプロジェクト（Github）"><a href="#Githubプロジェクト（Github）" class="headerlink" title="Githubプロジェクト（Github）"></a>Githubプロジェクト（Github）</h5><ul>
 <li><a href="https://github.com/HJTSO/Team_C" title="Title" target="_blank" rel="external">Github Link</a> </li>
 </ul>
 <h5 id="参考資料（Reference）"><a href="#参考資料（Reference）" class="headerlink" title="参考資料（Reference）"></a>参考資料（Reference）</h5><ul>
+<li><a href="https://github.com/shanlusun/blockchain/tree/master/eos/05" title="Title" target="_blank" rel="external">EOS智能合约介绍</a> </li>
 <li><a href="https://blog.csdn.net/caokun_8341/article/details/80713851" title="Title" target="_blank" rel="external">EOS开发调试环境搭建</a> </li>
 <li><a href="https://www.jianshu.com/p/24e1607ac7a2" title="Title" target="_blank" rel="external">EOS源码学习系列</a> </li>
 </ul>
