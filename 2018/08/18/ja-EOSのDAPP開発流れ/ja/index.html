@@ -7,7 +7,7 @@
     
 
     <title>
-      Archives: 2018/7 
+      EOSのDAPP開発流れ | H.J.T. Github 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,12 +16,19 @@
     
     
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Archives: 2018/7">
-<meta property="og:url" content="http://yoursite.com/archives/2018/07/index.html">
+    <meta name="description" content="1. コードを実行し効果を調べる● C++等言語を開発する
+2. ツールを通してコンパイルする*「ツール」：cleos、keosd、nodeos、eosiocpp① コントラクトファイルを作成する● eosiocpp -n hello（パス：/opt/eosio/bin/data-dir/contracts）（チェック：docker exec -it docker_nodeosd_1 ls /he">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EOSのDAPP開発流れ | H.J.T. Github">
+<meta property="og:url" content="http://yoursite.com/2018/08/18/ja-EOSのDAPP開発流れ/ja/index.html">
 <meta property="og:site_name" content="H.J.T. Github">
+<meta property="og:description" content="1. コードを実行し効果を調べる● C++等言語を開発する
+2. ツールを通してコンパイルする*「ツール」：cleos、keosd、nodeos、eosiocpp① コントラクトファイルを作成する● eosiocpp -n hello（パス：/opt/eosio/bin/data-dir/contracts）（チェック：docker exec -it docker_nodeosd_1 ls /he">
+<meta property="og:updated_time" content="2018-08-18T04:30:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Archives: 2018/7">
+<meta name="twitter:title" content="EOSのDAPP開発流れ | H.J.T. Github">
+<meta name="twitter:description" content="1. コードを実行し効果を調べる● C++等言語を開発する
+2. ツールを通してコンパイルする*「ツール」：cleos、keosd、nodeos、eosiocpp① コントラクトファイルを作成する● eosiocpp -n hello（パス：/opt/eosio/bin/data-dir/contracts）（チェック：docker exec -it docker_nodeosd_1 ls /he">
     
     
     
@@ -211,47 +218,58 @@ classes that you can use:
         <div class="content-wrapper__inner entry">
             
 
+<article class="post-container post-container--single">
 
-  <h1 class="archive-title">Archives: 2018/7</h1>
-  <hr class="post-list__divider" />
-
-
-<div class="main-post-list">
-    <ol class="post-list">
+  <header class="post-header">
     
-    
-    <li>
+    <h1 class="post-title">EOSのDAPP開発流れ</h1>
 
-      <h2 class="post-list__post-title post-title">
-        <a href="/2018/07/07/ja-ETHのDAPP開発流れ/ja/" title="link to ETHのDAPP開発流れ">ETHのDAPP開発流れ</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2018-07-07" class="post-list__meta--date date">2018-07-07</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
     
 
-    <span class="pagination__page-number"> 1 / 1</span>
+    <div class="post-meta">
+      <time datetime="2018-08-18" class="post-meta__date date">2018-08-18</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Blockchain/">Blockchain</a>
+            </font>
+          
+
+      </span>
+    </div>
     
     
-</nav>
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h4 id="1-コードを実行し効果を調べる"><a href="#1-コードを実行し効果を調べる" class="headerlink" title="1. コードを実行し効果を調べる"></a>1. コードを実行し効果を調べる</h4><p>● C++等言語を開発する</p>
+<h4 id="2-ツールを通してコンパイルする"><a href="#2-ツールを通してコンパイルする" class="headerlink" title="2. ツールを通してコンパイルする"></a>2. ツールを通してコンパイルする</h4><p>*「ツール」：cleos、keosd、nodeos、eosiocpp<br>① コントラクトファイルを作成する<br>● eosiocpp -n hello<br>（パス：/opt/eosio/bin/data-dir/contracts）<br>（チェック：docker exec -it docker_nodeosd_1 ls /hello）<br>② ファイルをコンパイルする<br>● eosio cpp -o hello.wast hello.cpp<br>● eosio cpp -g hello.abi hello.cpp<br>③ コントラクトをマイグレートする<br>● cleos set contract eosio /hello/ /hello/hello.wast /hello/hello.abi -p eosio@active<br>④ コントラクトを呼び出す<br>● cleos push action hello hi ‘[“user”]’ -p eosio@active </p>
+<p>*あるいは「eosjs」を通してコンパイルする</p>
+<h4 id="3-関連するフロントエンド画面を完成する"><a href="#3-関連するフロントエンド画面を完成する" class="headerlink" title="3. 関連するフロントエンド画面を完成する"></a>3. 関連するフロントエンド画面を完成する</h4><p>● React.js/JavaScript/HTML/CSS</p>
+<h4 id="4-EOSのメインWebサイトにデプロイする"><a href="#4-EOSのメインWebサイトにデプロイする" class="headerlink" title="4. EOSのメインWebサイトにデプロイする"></a>4. EOSのメインWebサイトにデプロイする</h4><p>● 「config.ini」ファイルを修正し、コントラクトをマイグレートする（RAMがかかる）</p>
+<hr>
+<h5 id="Githubプロジェクト（Github）"><a href="#Githubプロジェクト（Github）" class="headerlink" title="Githubプロジェクト（Github）"></a>Githubプロジェクト（Github）</h5><ul>
+<li><a href="https://github.com/HJTSO/Team_C" title="Title" target="_blank" rel="external">Github Link</a> </li>
+</ul>
+<h5 id="参考資料（Reference）"><a href="#参考資料（Reference）" class="headerlink" title="参考資料（Reference）"></a>参考資料（Reference）</h5><ul>
+<li><a href="https://github.com/shanlusun/blockchain/tree/master/eos/05" title="Title" target="_blank" rel="external">EOS智能合约介绍</a> </li>
+<li><a href="https://blog.csdn.net/caokun_8341/article/details/80713851" title="Title" target="_blank" rel="external">EOS开发调试环境搭建</a> </li>
+<li><a href="https://www.jianshu.com/p/24e1607ac7a2" title="Title" target="_blank" rel="external">EOS源码学习系列</a> </li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
 
 
-</div>
             <footer class="footer">
 
     <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
@@ -279,6 +297,18 @@ classes that you can use:
 
 
     
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
     
     
 
