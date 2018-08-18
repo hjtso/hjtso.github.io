@@ -24,11 +24,13 @@
 <meta property="og:site_name" content="H.J.T. Github">
 <meta property="og:description" content="1. コードを実行し効果を調べる● C++等言語を開発する
 2. ツールを通してコンパイルする*「ツール」：cleos、keosd、nodeos、eosiocpp① コントラクトファイルを作成する● eosiocpp -n hello（パス：/opt/eosio/bin/data-dir/contracts）（チェック：docker exec -it docker_nodeosd_1 ls /he">
-<meta property="og:updated_time" content="2018-08-18T05:44:04.000Z">
+<meta property="og:image" content="http://yoursite.com/image/Blockchain/EOS/EOS_DAPP.jpg">
+<meta property="og:updated_time" content="2018-08-18T13:10:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EOSのDAPP開発流れ | H.J.T. Github">
 <meta name="twitter:description" content="1. コードを実行し効果を調べる● C++等言語を開発する
 2. ツールを通してコンパイルする*「ツール」：cleos、keosd、nodeos、eosiocpp① コントラクトファイルを作成する● eosiocpp -n hello（パス：/opt/eosio/bin/data-dir/contracts）（チェック：docker exec -it docker_nodeosd_1 ls /he">
+<meta name="twitter:image" content="http://yoursite.com/image/Blockchain/EOS/EOS_DAPP.jpg">
     
     
     
@@ -252,6 +254,9 @@ classes that you can use:
 <h4 id="2-ツールを通してコンパイルする"><a href="#2-ツールを通してコンパイルする" class="headerlink" title="2. ツールを通してコンパイルする"></a>2. ツールを通してコンパイルする</h4><p>*「ツール」：cleos、keosd、nodeos、eosiocpp<br>① コントラクトファイルを作成する<br>● eosiocpp -n hello<br>（パス：/opt/eosio/bin/data-dir/contracts）<br>（チェック：docker exec -it docker_nodeosd_1 ls /hello）<br>② ファイルをコンパイルする<br>● eosio cpp -o hello.wast hello.cpp<br>● eosio cpp -g hello.abi hello.cpp<br>③ コントラクトをマイグレートする<br>● cleos set contract eosio /hello/ /hello/hello.wast /hello/hello.abi -p eosio@active<br>④ コントラクトを呼び出す<br>● cleos push action hello hi ‘[“user”]’ -p eosio@active<br>● あるいは「eosjs」を通してコンパイルする（nodejsを使う）</p>
 <h4 id="3-関連するフロントエンド画面を完成する"><a href="#3-関連するフロントエンド画面を完成する" class="headerlink" title="3. 関連するフロントエンド画面を完成する"></a>3. 関連するフロントエンド画面を完成する</h4><p>● React.js/JavaScript/HTML/CSS</p>
 <h4 id="4-EOSのメインWebサイトにデプロイする"><a href="#4-EOSのメインWebサイトにデプロイする" class="headerlink" title="4. EOSのメインWebサイトにデプロイする"></a>4. EOSのメインWebサイトにデプロイする</h4><p>● 「config.ini」ファイルを修正し、コントラクトをマイグレートする（RAMがかかる）</p>
+<hr>
+<center><img src="/image/Blockchain/EOS/EOS_DAPP.jpg" alt="EOS_DAPP"></center> 
+
 <hr>
 <h5 id="Githubプロジェクト（Github）"><a href="#Githubプロジェクト（Github）" class="headerlink" title="Githubプロジェクト（Github）"></a>Githubプロジェクト（Github）</h5><ul>
 <li><a href="https://github.com/HJTSO/Team_C" title="Title" target="_blank" rel="external">Github Link</a> </li>
