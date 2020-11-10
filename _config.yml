@@ -7,15 +7,15 @@ title: H.J.T. Github
 subtitle:
 description:
 author: H.J.T.
-language:
-- zh
-- en
-- ja
-- fr
-- ar
-- ru
-- es
-- de
+language: en-US
+# - zh
+# - en
+# - ja
+# - fr
+# - ar
+# - ru
+# - es
+# - de
 timezone:
 
 # URL

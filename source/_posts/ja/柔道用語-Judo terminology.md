@@ -27,7 +27,7 @@ tags: Judo
 | 12   | 踵返       | きびすがえし       | Kibisu-gaeshi     |
 | 13   | 内股       | うちまたすかし     | Uchi-mata-sukashi |
 | 14   | 小内返     | こうちがえし       | Kouchi-gaeshi     |
-| 15   | 一本背负投 | いっぽんせおいなげ | Ippon-seoi-nage   |  
+| 15   | 一本背负投 | いっぽんせおいなげ | Ippon-seoi-nage    |  
 
 ## 2.腰技(11本)
 | 序号 | 名称       | 日语              | 英语                 |
