@@ -1,0 +1,21 @@
+# Header
+menu:
+  See: /#blog
+  Key: /About
+  Arc: /Archive
+
+# Site favicon
+favicon: /favicon-black-55.png
+
+# Site logo
+# logo: /avatar.png
+# logo: /favicon.ico
+
+# Enable Mathjax
+mathjax: true
+
+# Enable awesome-toc
+awesome_toc: true
+
+# Enable githubRepoWidget
+github_repo_widget: true

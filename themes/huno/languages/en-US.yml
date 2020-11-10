@@ -1,0 +1,15 @@
+archive_title: Archives
+category_title: Category
+tag_title: Tag
+rss_title: RSS
+excerpt_title: Read More
+
+comment: Comments
+
+categories: Categories
+tags: Tags
+archives: Archives
+
+pagination:
+  prev: Prev
+  next: Next
