@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Deep learning笔记1-神经网络入门 | H.J.T. Github 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="H.J.T.">
+    
+    
+
+    <meta name="description" content="1. 简单的神经网络（Neural Network）  
+
+
+神经网络示意图，圆圈代表单元，方块是运算
+
+这个架构使得神经网络可以实现，激活函数 f(h) 可以是任何函数，此例用
+
+
+$$sigmoid(x)=\frac{1}{1+e^{-x}}$$
+123456789101112131415import numpy as npdef sigmoid(x):    #TODO: Implement">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deep learning笔记1-神经网络入门 | H.J.T. Github">
+<meta property="og:url" content="http://yoursite.com/2017/08/28/zh-Deep-learning笔记1-神经网络入门/zh/index.html">
+<meta property="og:site_name" content="H.J.T. Github">
+<meta property="og:description" content="1. 简单的神经网络（Neural Network）  
+
+
+神经网络示意图，圆圈代表单元，方块是运算
+
+这个架构使得神经网络可以实现，激活函数 f(h) 可以是任何函数，此例用
+
+
+$$sigmoid(x)=\frac{1}{1+e^{-x}}$$
+123456789101112131415import numpy as npdef sigmoid(x):    #TODO: Implement">
+<meta property="og:image" content="http://yoursite.com/image/DL/1/simple-neuron.png">
+<meta property="og:image" content="http://yoursite.com/image/DL/1/BP.gif">
+<meta property="og:updated_time" content="2018-01-01T13:12:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Deep learning笔记1-神经网络入门 | H.J.T. Github">
+<meta name="twitter:description" content="1. 简单的神经网络（Neural Network）  
+
+
+神经网络示意图，圆圈代表单元，方块是运算
+
+这个架构使得神经网络可以实现，激活函数 f(h) 可以是任何函数，此例用
+
+
+$$sigmoid(x)=\frac{1}{1+e^{-x}}$$
+123456789101112131415import numpy as npdef sigmoid(x):    #TODO: Implement">
+<meta name="twitter:image" content="http://yoursite.com/image/DL/1/simple-neuron.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon-black-55.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+<body>
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">H.J.T. Github</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">See</a></li>
+              
+                
+                <li class="navigation__item"><a href="/About" title="" class="">Key</a></li>
+              
+                
+                <li class="navigation__item"><a href="/Archive" title="" class="">Arc</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/hjtso" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+      <!-- Facebook -->
+      <li class="navigation__item">
+        <a href="https://www.facebook.com/jintao.huang.1" title=“Facebook”>
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">Facebook</span>
+        </a>
+      </li>
+
+      <!-- Instagram -->
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/huang_jintao/" title=“Instagram”>
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">Instagram</span>
+        </a>
+      </li>
+
+      <!-- Linkedin -->
+      <li class="navigation__item">
+        <a href="https://www.linkedin.com/in/jintao-huang-48429565" title=“Linkedin”>
+          <i class='icon icon-social-linkedin'></i>
+          <span class="label">Linkedin</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+
+      <li class="navigation__item">
+        <a href="http://www.weibo.com/musimusi" title=“Weibo”>
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    <!--
+      <li class="navigation__item">
+        <a href="https://www.hjt.so" title=“HJT347341”>
+          <i class='icon cs-icon-wechat'></i>
+          <span class="label">Wechat</span>
+        </a>
+      </li>
+
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Deep learning笔记1-神经网络入门</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-08-28" class="post-meta__date date">2017-08-28</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Deep-Learning/">Deep Learning</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="1-简单的神经网络（Neural-Network）"><a href="#1-简单的神经网络（Neural-Network）" class="headerlink" title="1. 简单的神经网络（Neural Network）"></a>1. 简单的神经网络（Neural Network）</h3><center><img src="/image/DL/1/simple-neuron.png" alt="simple-neuron"></center>  
+
+<ul>
+<li><p>神经网络示意图，圆圈代表单元，方块是运算</p>
+</li>
+<li><p>这个架构使得神经网络可以实现，激活函数 f(h) 可以是任何函数，此例用</p>
+</li>
+</ul>
+<p>$$sigmoid(x)=\frac{1}{1+e^{-x}}$$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid</span><span class="params">(x)</span>:</span></div><div class="line">    <span class="comment">#<span class="doctag">TODO:</span> Implement sigmoid function</span></div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>/(<span class="number">1</span> + np.exp(-x))</div><div class="line"></div><div class="line">inputs = np.array([<span class="number">0.7</span>, <span class="number">-0.3</span>])</div><div class="line">weights = np.array([<span class="number">0.1</span>, <span class="number">0.8</span>])</div><div class="line">bias = <span class="number">-0.1</span></div><div class="line"></div><div class="line"><span class="comment">#Calculate the output</span></div><div class="line">output = sigmoid(np.dot(weights, inputs) + bias)</div><div class="line"></div><div class="line">print(<span class="string">'Output:'</span>)</div><div class="line">print(output)</div></pre></td></tr></table></figure>
+<h3 id="2-重要的三个函数（Function）"><a href="#2-重要的三个函数（Function）" class="headerlink" title="2. 重要的三个函数（Function）"></a>2. 重要的三个函数（Function）</h3><ul>
+<li>h(x) 即模型，也就是从输入特征预测输入的那个函数</li>
+</ul>
+<p>$$h(x) = w_{1}x_{1} + w_{2}x_{2} + … + b , \text{其中w为权值，b为偏置项}$$</p>
+<ul>
+<li><p>E(w) 目标函数 目标函数取最小(最大)值时所对应的参数值，就是模型的参数的最优值。很多时候我们只能获得目标函数的局部最小(最大)值，因此也只能得到模型参数的局部最优值。eg:</p>
+<p>① 最小二乘式（一般用于回归类问题）：<br>$$E(w) = \frac{1}{2}\sum\limits_{i=1}^n(y^{i}-\overline{y^{i}})^{2}，其中，梯度 \Delta E(w) = -\sum\limits_{i=1}^n(y^{i}-\overline{y^{i}}) x^{i}$$</p>
+<p>② 交叉熵式（一般用于分类问题）：<br>$$L(y,o)=-\frac{1}{N}\sum_{n\in{N}}{y_nlogo_n}$$  </p>
+</li>
+<li><p>f(x) 激活函数，常用的有sigmoid／relu／softmax</p>
+</li>
+</ul>
+<h3 id="3-随机梯度下降（Stochastic-Gradient-Descent-）"><a href="#3-随机梯度下降（Stochastic-Gradient-Descent-）" class="headerlink" title="3. 随机梯度下降（Stochastic Gradient Descent,）"></a>3. 随机梯度下降（Stochastic Gradient Descent,）</h3><ul>
+<li>将预测值与实际值的误差$|y^{0}-y^{t}|$，组成的一个抛物线函数$|{y^{0}-y^{t}}|^2$，在抛物线里一直找梯度向下的方向，乘以步长$\eta$（也称作学习信率），不断地迭代，找出最小值。</li>
+</ul>
+<ul>
+<li>梯度下降算法：<br>$$\mathrm{x}_{new}=\mathrm{x}_{old}-\eta\nabla{f(x)}\qquad(式3.1)$$<br>其中△为梯度算子，△f(x)是指f(x)的梯度，$\eta$步长</li>
+</ul>
+<ul>
+<li>梯度下降算法可以写成：(△E(w)详细推导请看 <a href="https://www.zybuluo.com/hanbingtao/note/448086/" title="Title" target="_blank" rel="external">△E(w)的推导</a> )</li>
+</ul>
+<p>$$\mathrm{w}_{new}=\mathrm{w}_{old}-\eta\nabla{E(\mathrm{w})}\qquad(式3.2)$$</p>
+<p>$$由于梯度：  △E(w) = -\sum\limits_{i=1}^n(y^{i}-\overline{y^{i}}) x^{i} $$</p>
+<ul>
+<li>因此，线性单元的参数修改规则最后是:</li>
+</ul>
+<p>$$\mathrm{w}_{new}=\mathrm{w}_{old}+\eta\sum_{i=1}^{n}(y^{(i)}-\bar{y}^{(i)})\mathrm{x}^{(i)}\qquad(式3.3)$$</p>
+<h3 id="4-前向传播（Forward-Propagation）"><a href="#4-前向传播（Forward-Propagation）" class="headerlink" title="4. 前向传播（Forward Propagation）"></a>4. 前向传播（Forward Propagation）</h3><ul>
+<li>在完成网络的每个层级时，计算每个神经元的输出。一个层级的所有输出变成下一层级神经元的输入。</li>
+</ul>
+<h3 id="5-反向传播（Back-Propagation）"><a href="#5-反向传播（Back-Propagation）" class="headerlink" title="5. 反向传播（Back Propagation）"></a>5. 反向传播（Back Propagation）</h3><ul>
+<li><p>在神经网络中使用权重将信号从输入层传播到输出层。使用权重将错误从输出层传播回网络，以便更新权重。  </p>
+</li>
+<li><p>按照下面的方法计算出每个节点的误差项（error term） $\delta_i$</p>
+</li>
+<li><p>对于输出层节点i，<br>$$\delta_i=y_i(1-y_i)(t_i-y_i)\qquad(式5.1)$$</p>
+</li>
+<li><p>对于隐藏层节点，<br>$$\delta_i=a_i(1-a_i)\sum_{k\in{outputs}}w_{ki}\delta_k\qquad(式5.2)$$</p>
+</li>
+<li><p>梯度下降公式可表达为：<br>$$w_{ji}\gets w_{ji}+\eta\delta_jx_{ji}\qquad(式5.3)$$</p>
+</li>
+<li><p>反向传播算法的详细推导请看 （<a href="https://www.zybuluo.com/hanbingtao/note/476663/" title="Title" target="_blank" rel="external">反向传播算法的推导</a>)</p>
+</li>
+<li><p>关于反向传播的推荐阅读（<a href="http://www.hankcs.com/nlp/cs224n-backpropagation-and-project-advice.html" title="Title" target="_blank" rel="external">CS224n笔记5 反向传播与项目指导 - Hankcs</a> ）</p>
+</li>
+<li><p><a href="http://www.cnblogs.com/daniel-D/archive/2013/06/03/3116278.html" title="Title" target="_blank" rel="external">动态图表示前向和后向传播全过程 - daniel-D</a> </p>
+<center><img src="/image/DL/1/BP.gif" alt="simple-neuron"></center>   
+
+</li>
+</ul>
+<h3 id="6-超参数的确定（Adjust-Parameters）"><a href="#6-超参数的确定（Adjust-Parameters）" class="headerlink" title="6. 超参数的确定（Adjust Parameters）"></a>6. 超参数的确定（Adjust Parameters）</h3><h4 id="选择迭代次数"><a href="#选择迭代次数" class="headerlink" title="选择迭代次数"></a>选择迭代次数</h4><p>也就是训练网络时从训练数据中抽样的批次数量。迭代次数越多，模型就与数据越拟合。但是，如果迭代次数太多，模型就无法很好地泛化到其他数据，这叫做过拟合。你需要选择一个使训练损失很低并且验证损失保持中等水平的数字。当你开始过拟合时，你会发现训练损失继续下降，但是验证损失开始上升。</p>
+<h4 id="选择学习速率-eta"><a href="#选择学习速率-eta" class="headerlink" title="选择学习速率$\eta$"></a>选择学习速率$\eta$</h4><p>速率可以调整权重更新幅度。如果速率太大，权重就会太大，导致网络无法与数据相拟合。建议从 0.1 开始。如果网络在与数据拟合时遇到问题，尝试降低学习速率。注意，学习速率越低，权重更新的步长就越小，神经网络收敛的时间就越长。</p>
+<h4 id="选择隐藏节点数量"><a href="#选择隐藏节点数量" class="headerlink" title="选择隐藏节点数量"></a>选择隐藏节点数量</h4><p>隐藏节点越多，模型的预测结果就越准确。尝试不同的隐藏节点的数量，看看对性能有何影响。你可以查看损失字典，寻找网络性能指标。如果隐藏单元的数量太少，那么模型就没有足够的空间进行学习，如果太多，则学习方向就有太多的选择。选择隐藏单元数量的技巧在于找到合适的平衡点。</p>
+<ul>
+<li>调整根据经验，下面有几个经验公式：</li>
+</ul>
+<p>\begin{align}<br>&amp;m=\sqrt{n+l}+\alpha\\<br>&amp;m=log_2n\\<br>&amp;m=\sqrt{nl}\\<br>&amp;m:隐藏层节点数\\<br>&amp;n:输入层节点数\\<br>&amp;l:输出层节点数\\<br>&amp;\alpha:1到10之间的常数<br>\end{align}</p>
+<h3 id="参考资料（Reference）"><a href="#参考资料（Reference）" class="headerlink" title="参考资料（Reference）"></a>参考资料（Reference）</h3><ul>
+<li><a href="https://www.zybuluo.com/hanbingtao/note/448086/" title="Title" target="_blank" rel="external">梯度下降</a> </li>
+</ul>
+<ul>
+<li><a href="https://www.zybuluo.com/hanbingtao/note/476663/" title="Title" target="_blank" rel="external">反向传播以及超参数的确定</a> </li>
+</ul>
+<ul>
+<li><a href="http://www.hankcs.com/nlp/cs224n-backpropagation-and-project-advice.html" title="Title" target="_blank" rel="external">CS224n笔记5 反向传播与项目指导 - Hankcs</a> </li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
