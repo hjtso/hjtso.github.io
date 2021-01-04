@@ -1,7 +1,7 @@
 ---
 title: 剣道用語-Kendo terminology
 lang: ja
-date: 2020-12-14 20:20:30
+date: 2021-01-02 20:20:30
 tags: Kendo
 ---
 
