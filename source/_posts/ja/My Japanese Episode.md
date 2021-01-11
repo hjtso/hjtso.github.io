@@ -2,6 +2,7 @@
 title: My Japanese Episode
 lang: ja
 date: 2019-03-10 11:13:52
+tags: Prose
 ---
 
 ----------------------------------------  

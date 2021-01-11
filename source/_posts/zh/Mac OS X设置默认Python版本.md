@@ -1,6 +1,7 @@
 ---
 title: Mac OS X设置默认Python版本
 date: 2017-01-04 12:59:30
+tags: Prose
 ---
 想在Mac OS X设置默认Python版本，系统自带是2.7，自装的是3.5. 以下方法：
 

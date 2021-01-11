@@ -1,5 +1,5 @@
 ---
-title: 剣道用語-Kendo terminology
+title: 剣道技用語-Kendo Waza Terminology
 lang: ja
 date: 2021-01-02 20:20:30
 tags: Kendo
