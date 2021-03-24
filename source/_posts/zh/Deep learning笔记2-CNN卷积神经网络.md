@@ -2,7 +2,7 @@
 ---
 title: Deep learning笔记2-CNN卷积神经网络
 lang: zh
-date: 2017-08-16 18:18:56
+date: 2017-08-15 18:18:56
 tags: Deep Learning
 ---
 

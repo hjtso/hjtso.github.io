@@ -2,7 +2,7 @@
 ---
 title: Deep learning笔记1-神经网络入门
 lang: zh
-date: 2017-08-28 18:18:56
+date: 2017-08-14 18:18:56
 tags: Deep Learning
 ---
 

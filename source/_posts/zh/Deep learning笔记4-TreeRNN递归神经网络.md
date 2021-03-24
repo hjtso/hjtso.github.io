@@ -2,7 +2,7 @@
 ---
 title: Deep learning笔记4-TreeRNN递归神经网络
 lang: zh
-date: 2017-08-19 18:18:56
+date: 2017-08-17 18:18:56
 tags: Deep Learning
 ---
 
