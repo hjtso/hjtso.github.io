@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Deep learning笔记2-CNN卷积神经网络 | H.J.T. Github 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="H.J.T.">
+    
+    
+
+    <meta name="description" content="1. 卷积神经网络简介（CNN）原图和公式说明来自：零基础入门深度学习(4) - 卷积神经网络 
+
+ 
+
+
+一个卷积神经网络（Convolutional Neural Network）由若干卷积层、池化层、全连接层组成。
+1.1. 卷积神经网络输出值的计算以一个55的图像，使用一个33的filter进行卷积，得到一个3*3的Feature Map为例：
+
+
+
+以步幅(stride)为1，依次计算出">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deep learning笔记2-CNN卷积神经网络 | H.J.T. Github">
+<meta property="og:url" content="http://yoursite.com/2017/08/15/zh-Deep-learning笔记2-CNN卷积神经网络/zh/index.html">
+<meta property="og:site_name" content="H.J.T. Github">
+<meta property="og:description" content="1. 卷积神经网络简介（CNN）原图和公式说明来自：零基础入门深度学习(4) - 卷积神经网络 
+
+ 
+
+
+一个卷积神经网络（Convolutional Neural Network）由若干卷积层、池化层、全连接层组成。
+1.1. 卷积神经网络输出值的计算以一个55的图像，使用一个33的filter进行卷积，得到一个3*3的Feature Map为例：
+
+
+
+以步幅(stride)为1，依次计算出">
+<meta property="og:image" content="http://yoursite.com/image/DL/2/1.png">
+<meta property="og:image" content="http://yoursite.com/image/DL/2/2.png">
+<meta property="og:image" content="http://yoursite.com/image/DL/2/3.gif">
+<meta property="og:image" content="http://yoursite.com/image/DL/2/4.gif">
+<meta property="og:image" content="http://yoursite.com/image/DL/2/5.png">
+<meta property="og:image" content="http://yoursite.com/image/DL/2/CNN.jpg">
+<meta property="og:image" content="http://yoursite.com/image/DL/2/autoencoder_1.png">
+<meta property="og:image" content="http://yoursite.com/image/DL/2/cnnarchitecture.jpg">
+<meta property="og:image" content="http://yoursite.com/image/DL/2/Mask-RCNN.png">
+<meta property="og:updated_time" content="2021-03-24T02:09:58.403Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Deep learning笔记2-CNN卷积神经网络 | H.J.T. Github">
+<meta name="twitter:description" content="1. 卷积神经网络简介（CNN）原图和公式说明来自：零基础入门深度学习(4) - 卷积神经网络 
+
+ 
+
+
+一个卷积神经网络（Convolutional Neural Network）由若干卷积层、池化层、全连接层组成。
+1.1. 卷积神经网络输出值的计算以一个55的图像，使用一个33的filter进行卷积，得到一个3*3的Feature Map为例：
+
+
+
+以步幅(stride)为1，依次计算出">
+<meta name="twitter:image" content="http://yoursite.com/image/DL/2/1.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon-black-55.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+<body>
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">H.J.T. Github</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">See</a></li>
+              
+                
+                <li class="navigation__item"><a href="/About" title="" class="">Key</a></li>
+              
+                
+                <li class="navigation__item"><a href="/Archive" title="" class="">Arc</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/hjtso" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+      <!-- Facebook -->
+      <li class="navigation__item">
+        <a href="https://www.facebook.com/jintao.huang.1" title=“Facebook”>
+          <i class='icon icon-social-facebook'></i>
+          <span class="label">Facebook</span>
+        </a>
+      </li>
+
+      <!-- Instagram -->
+      <li class="navigation__item">
+        <a href="https://www.instagram.com/huang_jintao/" title=“Instagram”>
+          <i class='icon icon-social-instagram'></i>
+          <span class="label">Instagram</span>
+        </a>
+      </li>
+
+      <!-- Linkedin -->
+      <li class="navigation__item">
+        <a href="https://www.linkedin.com/in/jintao-huang-48429565" title=“Linkedin”>
+          <i class='icon icon-social-linkedin'></i>
+          <span class="label">Linkedin</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+
+      <li class="navigation__item">
+        <a href="http://www.weibo.com/musimusi" title=“Weibo”>
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    <!--
+      <li class="navigation__item">
+        <a href="https://www.hjt.so" title=“HJT347341”>
+          <i class='icon cs-icon-wechat'></i>
+          <span class="label">Wechat</span>
+        </a>
+      </li>
+
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+    -->
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Deep learning笔记2-CNN卷积神经网络</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-08-15" class="post-meta__date date">2017-08-15</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Deep-Learning/">Deep Learning</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="1-卷积神经网络简介（CNN）"><a href="#1-卷积神经网络简介（CNN）" class="headerlink" title="1. 卷积神经网络简介（CNN）"></a>1. 卷积神经网络简介（CNN）</h3><p>原图和公式说明来自：<a href="https://www.zybuluo.com/hanbingtao/note/485480" title="Title" target="_blank" rel="external">零基础入门深度学习(4) - 卷积神经网络</a> </p>
+<hr>
+<center><img src="/image/DL/2/1.png" alt="CNN"></center> 
+
+<hr>
+<p>一个卷积神经网络（Convolutional Neural Network）由若干卷积层、池化层、全连接层组成。</p>
+<h4 id="1-1-卷积神经网络输出值的计算"><a href="#1-1-卷积神经网络输出值的计算" class="headerlink" title="1.1. 卷积神经网络输出值的计算"></a>1.1. 卷积神经网络输出值的计算</h4><p>以一个5<em>5的图像，使用一个3</em>3的filter进行卷积，得到一个3*3的Feature Map为例：</p>
+<center><img src="/image/DL/2/2.png" alt="CNN"></center>
+
+<hr>
+<p>以步幅(stride)为1，依次计算出Feature Map中所有元素的值，计算过程：</p>
+<center><img src="/image/DL/2/3.gif" alt="CNN"></center>  
+
+<hr>
+<p>用例来自 - <a href="https://www.zybuluo.com/hanbingtao/note/485480" title="Title" target="_blank" rel="external">零基础入门深度学习(4) - 卷积神经网络</a>   </p>
+<p>推荐阅读 - <a href="https://zh.gluon.ai/cnn-scratch.html" title="Title" target="_blank" rel="external">Gluon - 卷积神经网络</a> </p>
+<h5 id="1-1-1-卷积层输出值的计算"><a href="#1-1-1-卷积层输出值的计算" class="headerlink" title="1.1.1. 卷积层输出值的计算"></a>1.1.1. 卷积层输出值的计算</h5><p>图像大小、步幅和卷积后的Feature Map大小，满足下面的关系：</p>
+<p>\begin{align}<br>W_2 &amp;= (W_1 - F + 2P)/S + 1\qquad\\<br>H_2 &amp;= (H_1 - F + 2P)/S + 1\qquad<br>\end{align}</p>
+<p>在上面两个公式中：W2是卷积后Feature Map的宽度；W1是卷积前图像的宽度；F是filter的宽度；P是Zero Padding数量，Zero Padding是指在原始图像周围补几圈0，如果P的值是1，那么就补1圈0；S是步幅；H2是卷积后Feature Map的高度；H1是卷积前图像的宽度。</p>
+<p>下面的显示包含两个filter的卷积层的计算。可以看到7<em>7</em>3输入，经过两个3<em>3</em>3filter的卷积(步幅为2)，得到了3<em>3</em>2的输出。另外也会看到下图的Zero padding是1，也就是在输入元素的周围补了一圈0。</p>
+<center><img src="/image/DL/2/4.gif" alt="CNN"></center>  
+
+<h5 id="1-1-2-池化层输出值的计算"><a href="#1-1-2-池化层输出值的计算" class="headerlink" title="1.1.2. 池化层输出值的计算"></a>1.1.2. 池化层输出值的计算</h5><p>池化层主要的作用是下采样，通过去掉Feature Map中不重要的样本，进一步减少参数数量。池化的方法最常用的是Max Pooling，即样本中取最大值，作为采样后的样本值。下例是2*2 max pooling：</p>
+<center><img src="/image/DL/2/5.png" alt="CNN"></center>  
+
+<hr>
+<p>还有Mean Pooling，即取各样本的平均值。</p>
+<h4 id="1-2-卷积公式的计算"><a href="#1-2-卷积公式的计算" class="headerlink" title="1.2. 卷积公式的计算"></a>1.2. 卷积公式的计算</h4><p>用X[i,j]表示图像的第i行第j列元素；对filter的每个权重进行编号，用W[m,n]表示第m行第n列权重，用Wb表示filter的偏置项；对Feature Map的每个元素进行编号，a[i,j]用表示Feature Map的第i行第j列元素；用f表示激活函数。</p>
+<p>$$a_{i,j}=f(\sum_{m=0}^{2}\sum_{n=0}^{2}w_{m,n}x_{i+m,j+n}+w_b)$$</p>
+<p>深度大于1的卷积计算公式：  </p>
+<p>$$a_{i,j}=f(\sum_{d=0}^{D-1}\sum_{m=0}^{F-1}\sum_{n=0}^{F-1}w_{d,m,n}x_{d,i+m,j+n}+w_b)$$</p>
+<h4 id="1-3-卷积神经网络的训练"><a href="#1-3-卷积神经网络的训练" class="headerlink" title="1.3. 卷积神经网络的训练"></a>1.3. 卷积神经网络的训练</h4><p>先前向传播，再反向传播，利用链式求导计算损失函数对每个权重的偏导数（梯度），然后再根据梯度下降公式更新权重w</p>
+<h4 id="1-4-关于权重w与偏置项b的初始化"><a href="#1-4-关于权重w与偏置项b的初始化" class="headerlink" title="1.4. 关于权重w与偏置项b的初始化"></a>1.4. 关于权重w与偏置项b的初始化</h4><h5 id="1-4-1-权重w的初始化"><a href="#1-4-1-权重w的初始化" class="headerlink" title="1.4.1. 权重w的初始化"></a>1.4.1. 权重w的初始化</h5><p>① 均匀分布：tf.random_uniform()</p>
+<p>② 正太分布：tf.random_normal()</p>
+<p>③ 从截断的正态取值–横轴区间（μ-2σ，μ+2σ）95%面积：tf.truncated_normal()</p>
+<p>④ 还有一个经验公式：从[-y, y]取值，其中 $y=1/\sqrt{n}$</p>
+<p>根据经验使用③效果较佳…</p>
+<h5 id="1-4-2-偏置项b的初始化"><a href="#1-4-2-偏置项b的初始化" class="headerlink" title="1.4.2. 偏置项b的初始化"></a>1.4.2. 偏置项b的初始化</h5><p>一般使用tf.zeros()来初始化为零值. </p>
+<p>阅读参考 - <a href="https://stackoverflow.com/questions/2480650/role-of-bias-in-neural-networks" title="Title" target="_blank" rel="external">Role of Bias in Neural Networks</a></p>
+<p>“a bias value allows you to shift the activation function to the left or right”</p>
+<h3 id="2-基于TensorFlow的实现（CNN-with-TF）"><a href="#2-基于TensorFlow的实现（CNN-with-TF）" class="headerlink" title="2. 基于TensorFlow的实现（CNN with TF）"></a>2. 基于TensorFlow的实现（CNN with TF）</h3><h4 id="2-1-TF卷积神经网络的基本实现"><a href="#2-1-TF卷积神经网络的基本实现" class="headerlink" title="2.1. TF卷积神经网络的基本实现"></a>2.1. TF卷积神经网络的基本实现</h4><h5 id="2-1-1-卷积层"><a href="#2-1-1-卷积层" class="headerlink" title="2.1.1. 卷积层"></a>2.1.1. 卷积层</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># Input/Image</span></div><div class="line">input = tf.placeholder(</div><div class="line">    tf.float32,</div><div class="line">    shape=[<span class="keyword">None</span>, image_height, image_width, color_channels])</div><div class="line"></div><div class="line"><span class="comment"># Weight and bias</span></div><div class="line">weight = tf.Variable(tf.truncated_normal(</div><div class="line">    [filter_size_height, filter_size_width, color_channels, k_output]))</div><div class="line">bias = tf.Variable(tf.zeros(k_output))</div><div class="line"></div><div class="line"><span class="comment"># Apply Convolution</span></div><div class="line">conv_layer = tf.nn.conv2d(input, weight, strides=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>], padding=<span class="string">'SAME'</span>)</div><div class="line"><span class="comment"># Add bias</span></div><div class="line">conv_layer = tf.nn.bias_add(conv_layer, bias)</div><div class="line"><span class="comment"># Apply activation function</span></div><div class="line">conv_layer = tf.nn.relu(conv_layer)</div></pre></td></tr></table></figure>
+<p>weights 作为滤波器，[1, 2, 2, 1] 作为 strides。TensorFlow 对每一个 input 维度使用一个单独的 stride 参数，[batch, input_height, input_width, input_channels]。通常把 batch 和 input_channels （strides 序列中的第一个第四个）的 stride 设为 1。</p>
+<h5 id="2-1-2-池化层"><a href="#2-1-2-池化层" class="headerlink" title="2.1.2. 池化层"></a>2.1.2. 池化层</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># Apply Max Pooling</span></div><div class="line">conv_layer = tf.nn.max_pool(</div><div class="line">    conv_layer,</div><div class="line">    ksize=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>],</div><div class="line">    strides=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>],</div><div class="line">    padding=<span class="string">'SAME'</span>)</div></pre></td></tr></table></figure>
+<p>tf.nn.max_pool() 函数实现最大池化时， ksize参数是滤波器大小，strides参数是步长。2x2 的滤波器配合 2x2 的步长是常用设定。</p>
+<p>ksize 和 strides 参数也被构建为四个元素的列表，每个元素对应 input tensor 的一个维度 ([batch, height, width, channels])，对 ksize 和 strides 来说，batch 和 channel 通常都设置成 1。</p>
+<h4 id="2-2-TF卷积神经网络的实现例"><a href="#2-2-TF卷积神经网络的实现例" class="headerlink" title="2.2. TF卷积神经网络的实现例"></a>2.2. TF卷积神经网络的实现例</h4><p>对 <a href="https://www.cs.toronto.edu/~kriz/cifar.html" title="Title" target="_blank" rel="external">CIFAR-10 数据集</a> 中的图片进行分类。<br>该数据集包含飞机、猫狗和其他物体。先预处理这些图片，然后用所有样本训练一个卷积神经网络。图片需要标准化（normalized），标签需要采用 one-hot 编码。构建卷积（convolution）、最大池化（max pooling）、丢弃（dropout）和完全连接（fully connected）的层。最后在样本图片上看到神经网络的预测结果。</p>
+<p>具体实现不赘述，过程直接看Github，吾辈准确率不高，才57%左右 - <a href="https://github.com/HJTSO/image-classification/blob/master/dlnd_image_classification.ipynb" title="Title" target="_blank" rel="external">Github Link</a>   </p>
+<h4 id="2-3-卷积神经网络内部一窥"><a href="#2-3-卷积神经网络内部一窥" class="headerlink" title="2.3. 卷积神经网络内部一窥"></a>2.3. 卷积神经网络内部一窥</h4><hr>
+<center><img src="/image/DL/2/CNN.jpg" alt="CNN"></center> 
+
+<hr>
+<p>瑞尔森大学的Adam Harley创建了一个交互式视觉化模型，能够帮助解释卷积神经网络内部每一层是如何工作的：<a href="http://scs.ryerson.ca/~aharley/vis/conv/" title="Title" target="_blank" rel="external">Link</a>   </p>
+<h3 id="3-自编码器（Autoencoder）"><a href="#3-自编码器（Autoencoder）" class="headerlink" title="3. 自编码器（Autoencoder）"></a>3. 自编码器（Autoencoder）</h3><p>自编码器（Autoencoder）由于处理过程中有单元减少，解压缩效果不如MP3与JPEG，但是在图像去噪（Denoising）与降维（dimensionality reduction）方面取得不错的效果。</p>
+<center><img src="/image/DL/2/autoencoder_1.png" alt="CNN"></center> 
+
+<hr>
+<h4 id="3-1-使用dense实现"><a href="#3-1-使用dense实现" class="headerlink" title="3.1. 使用dense实现"></a>3.1. 使用dense实现</h4><p>Encoder：使用tf.layers.dense与relu激活函数实现<br>Decoder：使用tf.layers.dense与sigmoid激活函数实现</p>
+<ul>
+<li>Autoencoder用例实现1 - Udacity <a href="https://github.com/udacity/cn-deep-learning/blob/master/tutorials/autoencoder/Simple_Autoencoder_Solution.ipynb" title="Title" target="_blank" rel="external">Github Link</a> </li>
+</ul>
+<h4 id="3-2-使用卷积实现"><a href="#3-2-使用卷积实现" class="headerlink" title="3.2. 使用卷积实现"></a>3.2. 使用卷积实现</h4><p>Encoder：使用tf.layers.conv2d与tf.layers.max_pooling2d（下采样）实现<br>Decoder：使用tf.layers.conv2d与tf.image.resize_nearest_neighbor（上采样）实现</p>
+<ul>
+<li>Autoencoder用例实现2 - Udacity <a href="https://github.com/udacity/cn-deep-learning/blob/master/tutorials/autoencoder/Convolutional_Autoencoder_Solution.ipynb" title="Title" target="_blank" rel="external">Github Link</a> </li>
+</ul>
+<p>推荐：Deconvolution and Checkerboard Artifacts <a href="https://distill.pub/2016/deconv-checkerboard/" title="Title" target="_blank" rel="external">Distill</a> </p>
+<h3 id="4-迁移学习（Transfer-Learning）"><a href="#4-迁移学习（Transfer-Learning）" class="headerlink" title="4. 迁移学习（Transfer Learning）"></a>4. 迁移学习（Transfer Learning）</h3><p>迁移学习（Transfer Learning）：在实际中，通常会使用预训练模型（比如 AlexNet，VGGNet，Google Inception Net，ResNet），将最后的几个全连接层（基本作用是分类器），替换成自己的分类器，再进行训练与测试。  </p>
+<p>介绍其中两种CNN网络模型 AlexNet 与 VGGNet：</p>
+<h4 id="4-1-AlexNet"><a href="#4-1-AlexNet" class="headerlink" title="4.1 AlexNet"></a>4.1 AlexNet</h4><p>AlexNet是由SuperVision设计，包括成员Alex Krizhevsky，Geoffrey Hinton，Ilya Sutskeve设计的CNN网络模型。该模型在2012年ImageNet Large Scale Visual Recognition Challenge的比赛中以15.3%错误率获得冠军，领先第二名10.8个百分点。</p>
+<p>输入要求256(图像大小)，均值是256的，减均值后再crop到227(输入图像大小)   </p>
+<p>参考 - <a href="http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf" title="Title" target="_blank" rel="external">AlexNet</a> </p>
+<h4 id="4-2-VGGNet"><a href="#4-2-VGGNet" class="headerlink" title="4.2 VGGNet"></a>4.2 VGGNet</h4><p>VGGNet是牛津大学计算机视觉组（Visual Geometry Group）和 Google DeepMind 公司的研究员一起研发的的深度卷积神经网络，在ILSVRC 2014上取得了第二名的成绩，将Top-5错误率降到7.3%。</p>
+<p>输入要求256(图像大小)，均值是256的，减均值后再crop到224(输入图像大小)  </p>
+<p>参考 - <a href="http://www.robots.ox.ac.uk/~vgg/research/very_deep/" title="Title" target="_blank" rel="external">Visual Geometry Group</a> </p>
+<center><img src="/image/DL/2/cnnarchitecture.jpg" alt="cnnarchitecture"></center>  
+
+<hr>
+<ul>
+<li>VGGNet使用例 - Udacity <a href="https://github.com/udacity/cn-deep-learning/blob/master/tutorials/transfer-learning/Transfer_Learning_Solution.ipynb" title="Title" target="_blank" rel="external">Github Link</a> </li>
+</ul>
+<hr>
+<h3 id="5-目标检测（Object-Detection）"><a href="#5-目标检测（Object-Detection）" class="headerlink" title="5. 目标检测（Object Detection）"></a>5. 目标检测（Object Detection）</h3><p>Object Detection是在给定的图片中精确找到物体所在位置，并标注出物体的类别。<br>Object Detection要解决的问题就是物体在哪里Where，是什么What这整个流程的问题。</p>
+<p>但是在现实生活中，问题不是那么简单，物体的尺寸变化范围很大，摆放物体的角度，姿态不定，而且可以出现在图片的任何地方，而且物体的类别还有多种。</p>
+<p>关于目标检测区域建议的演化历史：- <a href="https://blog.athelas.com/a-brief-history-of-cnns-in-image-segmentation-from-r-cnn-to-mask-r-cnn-34ea83205de4" title="Title" target="_blank" rel="external">A Brief History of CNNs</a></p>
+<p>CNN-&gt;RCNN-&gt;Fast-RCNN-&gt;Faster-RCNN-&gt;Mask-RCNN-&gt;…</p>
+<hr>
+<center><img src="/image/DL/2/Mask-RCNN.png" alt="CNN"></center> 
+
+<hr>
+<ul>
+<li><p><a href="https://zhuanlan.zhihu.com/p/27473413" title="Title" target="_blank" rel="external">RCNN</a></p>
+</li>
+<li><p><a href="https://zhuanlan.zhihu.com/p/27582096" title="Title" target="_blank" rel="external">Fast-RCNN</a></p>
+</li>
+<li><p><a href="https://zhuanlan.zhihu.com/p/27988828" title="Title" target="_blank" rel="external">Faster-RCNN</a></p>
+</li>
+<li><p><a href="https://arxiv.org/abs/1703.06870" title="Title" target="_blank" rel="external">Mask-RCNN</a></p>
+</li>
+</ul>
+<h3 id="程序实例（Program-Example）"><a href="#程序实例（Program-Example）" class="headerlink" title="程序实例（Program Example）"></a>程序实例（Program Example）</h3><ul>
+<li><a href="https://github.com/HJTSO/image-classification/blob/master/dlnd_image_classification.ipynb" title="Title" target="_blank" rel="external">Github Link</a> </li>
+</ul>
+<h3 id="参考资料（Reference）"><a href="#参考资料（Reference）" class="headerlink" title="参考资料（Reference）"></a>参考资料（Reference）</h3><ul>
+<li><p><a href="https://zh.gluon.ai/cnn-scratch.html" title="Title" target="_blank" rel="external">Gluon - 卷积神经网络</a> </p>
+</li>
+<li><p><a href="http://tensorflow.classcat.com/2017/05/08/tensorflow-network-in-network/" title="Title" target="_blank" rel="external">Network-In-Network で CIFAR-10 精度 90%</a> </p>
+</li>
+<li><p><a href="https://www.zybuluo.com/hanbingtao/note/485480" title="Title" target="_blank" rel="external">零基础入门深度学习(4) - 卷积神经网络</a> </p>
+</li>
+<li><p><a href="https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/" title="Title" target="_blank" rel="external">不同的层在CNN网络的作用原理</a> </p>
+</li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
