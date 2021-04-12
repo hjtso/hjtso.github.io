@@ -63,3 +63,5 @@ tags: Kendo
 - [初心者必見！簡単にわかる剣道の技12選](https://sposhiru.com/86012#-6 "Title") 
 - [剣道の技について](https://www.budosuki.com/category23/entry101.html "Title") 
 - [剣道の技種類一覧](https://budo-kendo.com/kendo-waza-list-general "Title") 
+- [昇級審査と木刀基本技を学ぶ](https://kendopark.jp/kenjoy/kyu-exam "Title") 
+- [昇段審査と日本剣道形を学ぶ](https://kendopark.jp/kenjoy/nihonkendogata-method "Title") 
