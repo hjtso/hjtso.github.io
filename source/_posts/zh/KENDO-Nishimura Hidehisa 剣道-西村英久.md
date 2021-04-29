@@ -1,7 +1,7 @@
 ---
-title: KENDO-Hidehisa Nishimura 剣道-西村英久.md
+title: KENDO-Nishimura Hidehisa 剣道-西村英久.md
 lang: zh
-date: 2021-02-20 15:15:50
+date: 2021-01-30 15:15:50
 tags: Kendo
 ---
 
