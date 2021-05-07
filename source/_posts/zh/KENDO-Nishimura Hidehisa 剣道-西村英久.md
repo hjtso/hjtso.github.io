@@ -39,5 +39,5 @@ tags: Kendo
   
 ---------------------  
 
-&#8195;&#8195;[Bilibili视频链接 - H.J.T.](https://www.bilibili.com/video/BV1mK4y1o7kw "Title")
-&#8195;&#8195;[Youtube视频链接 - H.J.T.](https://youtu.be/7JVFqALsxdU "Title")
+[Bilibili视频链接 - H.J.T.](https://www.bilibili.com/video/BV1mK4y1o7kw "Title")
+[Youtube视频链接 - H.J.T.](https://youtu.be/7JVFqALsxdU "Title")
