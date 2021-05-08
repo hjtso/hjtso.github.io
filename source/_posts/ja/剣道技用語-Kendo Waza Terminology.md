@@ -1,7 +1,7 @@
 ---
 title: 剣道技用語-Kendo Waza Terminology
 lang: ja
-date: 2021-01-02 20:20:30
+date: 2018-08-06 20:20:30
 tags: Kendo
 ---
 

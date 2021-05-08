@@ -1,7 +1,7 @@
 ---
 title: SWIM-Ikee Rikako 游泳-池江璃花子
 lang: zh
-date: 2021-04-15 16:16:00
+date: 2021-04-10 16:16:00
 tags: Diving
 ---
 
@@ -19,7 +19,7 @@ tags: Diving
 &#8195;&#8195;影片《センターレーン ディレクターズ》（中间泳道），SK-II STUDIO出品，由导演枝裕和执镜，讲述池江改写命运重返赛场的故事，颂扬面对逆境的精神。
 &#8195;&#8195;[《中间泳道》中文版](https://sk-ii.com.tw/rikakoikee "Title")
 &#8195;&#8195;[《中间泳道》日语版](https://sk-ii.jp/rikakoikee "Title")
-&#8195;&#8195;此外推荐一部关于她的游泳旅程视频，原影片来自《アスリートの魂》（运动员之魂），（影片拍摄于2018年，在池江检测出患白血病之前）讲述了她跨越自己记录停滞障碍的游泳历程。
+&#8195;&#8195;此外推荐一部关于她的游泳旅程视频，原影片来自《アスリートの魂》（运动员之魂），（影片摄于2018年，在池江检测出患白血病之前）讲述了她跨越自己记录停滞障碍的游泳历程。
 
 <center>![Ikee](/image/Diving/Ikee/Ikee_2.jpg)</center>
 
@@ -42,9 +42,9 @@ tags: Diving
 
 ## 视频链接 
 
-<center><iframe src="//player.bilibili.com/player.html?aid=205421142&bvid=BV1qh411m7ki&cid=335223976&page=1" height="580" width="760" quality="high" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>  
+<center><iframe src="//player.bilibili.com/player.html?aid=887982176&bvid=BV17K4y1A7pi&cid=335590833&page=1" height="580" width="760" quality="high" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>  
 
 ---------------------  
 
-[Bilibili视频链接 - H.J.T.](https://www.bilibili.com/video/BV1qh411m7ki "Title")
-[Youtube视频链接 - H.J.T.](https://youtu.be/VZkomb_86p0 "Title")
+[Bilibili视频链接 - H.J.T.](https://www.bilibili.com/video/BV17K4y1A7pi "Title")
+[Youtube视频链接 - H.J.T.](https://youtu.be/O-VEXm_x8SQ "Title")
