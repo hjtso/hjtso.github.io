@@ -41,4 +41,4 @@ tags: Skiing
 ---------------------  
 
 [Bilibili视频链接 - H.J.T.](https://www.bilibili.com/video/BV1Q64y1C7NH "Title")
-[Youtube视频链接 - H.J.T.](hhttps://youtu.be/JckGnkqWnn4 "Title")
+[Youtube视频链接 - H.J.T.](https://youtu.be/JckGnkqWnn4 "Title")
