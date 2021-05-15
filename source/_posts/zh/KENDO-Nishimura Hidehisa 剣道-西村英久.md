@@ -35,7 +35,10 @@ tags: Kendo
 
 ## 视频链接 
 
-<center><iframe src="//player.bilibili.com/player.html?aid=930241223&bvid=BV1mK4y1o7kw&cid=327614542&page=1" height="580" width="760" quality="high" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>  
+<!-- <center><iframe src="//player.bilibili.com/player.html?aid=930241223&bvid=BV1mK4y1o7kw&cid=327614542&page=1&high_quality=1" height="580" width="100%" quality="high" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center> -->
+
+<div style="position: relative; padding: 33% 48%;">
+<iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://player.bilibili.com/player.html?aid=930241223&bvid=BV1mK4y1o7kw&cid=327614542&page=1&high_quality=1" frameborder="no" scrolling="no"></iframe></div>
   
 ---------------------  
 
