@@ -5,7 +5,7 @@ date: 2022-04-30 20:30:20
 tags: [Oils, Judo]
 ---
 
-首先是整体结构绘图和背景颜色基调：
+首先是整体结构绘图：
 
 <center>![judo](/image/Oils/judo/judo_1.jpeg)</center>
 
@@ -17,13 +17,13 @@ tags: [Oils, Judo]
 
 ----------------------------------------  
 
-其次明暗修改：
+进一步色彩细节修改：
 
 <center>![judo](/image/Oils/judo/judo_3.jpeg)</center>
 
 ----------------------------------------  
 
-进一步色彩细节修改：
+加背景颜色基调：
 
 <center>![judo](/image/Oils/judo/judo_4.jpeg)</center>
 
