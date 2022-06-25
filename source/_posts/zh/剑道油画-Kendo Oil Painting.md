@@ -5,13 +5,13 @@ date: 2022-04-29 20:30:20
 tags: [Oils, Kendo]
 ---
 
-首先是整体结构绘图和背景颜色基调：
+首先是整体结构绘图：
 
 <center>![kendo](/image/Oils/kendo/kendo_1.jpeg)</center>
 
 ----------------------------------------  
 
-加色彩：
+加色彩基调：
 
 <center>![kendo](/image/Oils/kendo/kendo_2.jpeg)</center>
 
