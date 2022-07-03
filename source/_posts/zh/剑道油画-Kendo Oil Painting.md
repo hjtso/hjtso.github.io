@@ -17,13 +17,13 @@ tags: [Oils, Kendo]
 
 ----------------------------------------  
 
-其次明暗修改：
+加背景颜色基调：
 
 <center>![kendo](/image/Oils/kendo/kendo_3.jpeg)</center>
 
 ----------------------------------------  
 
-进一步色彩细节修改：
+明暗和色彩细节修改：
 
 <center>![kendo](/image/Oils/kendo/kendo_4.jpeg)</center>
 
