@@ -5,19 +5,19 @@ date: 2022-04-30 21:30:20
 tags: [Oils, Skiing]
 ---
 
-首先是整体结构绘图和背景颜色基调：
+首先是整体结构绘图：
 
 <center>![skiing](/image/Oils/skiing/skiing_1.jpeg)</center>
 
 ----------------------------------------  
 
-加色彩：
+加背景颜色基调：
 
 <center>![skiing](/image/Oils/skiing/skiing_2.jpeg)</center>
 
 ----------------------------------------  
 
-进一步色彩细节修改：
+进一步色彩修改：
 
 <center>![skiing](/image/Oils/skiing/skiing_3.jpeg)</center>
 

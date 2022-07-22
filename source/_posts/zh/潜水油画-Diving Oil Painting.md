@@ -5,25 +5,25 @@ date: 2022-04-30 20:30:20
 tags: [Oils, Diving]
 ---
 
-首先是整体结构绘图和背景颜色基调：
+首先是整体结构绘图：
 
 <center>![diving](/image/Oils/diving/diving_1.jpeg)</center>
 
 ----------------------------------------  
 
-加色彩：
+加背景颜色基调：
 
 <center>![diving](/image/Oils/diving/diving_2.jpeg)</center>
 
 ----------------------------------------  
 
-进一步色彩细节修改：
+人物明暗和色彩细节修改：
 
 <center>![diving](/image/Oils/diving/diving_3.jpeg)</center>
 
 ----------------------------------------  
 
-细节修改：
+海水背景颜色修改：
 
 <center>![diving](/image/Oils/diving/diving_4.jpeg)</center>
 
