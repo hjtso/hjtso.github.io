@@ -23,13 +23,13 @@ tags: [Oils, Skiing]
 
 ----------------------------------------  
 
-细节修改：
+滑板与衣服等细节修改：
 
 <center>![skiing](/image/Oils/skiing/skiing_4.jpeg)</center>
 
 ----------------------------------------  
 
-完成图：
+加上太阳和雪花，完成图：
 
 <center>![skiing](/image/Oils/skiing/skiing_5.jpeg)</center>
 
