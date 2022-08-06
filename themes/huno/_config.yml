@@ -6,6 +6,8 @@ menu:
 
 # Site favicon
 favicon: /favicon-black-55.png
+# Icon for Apple touch
+apple_touch_icon: /favicon-black-55.png
 
 # Site logo
 # logo: /avatar.png
