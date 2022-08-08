@@ -51,7 +51,7 @@
 <meta property="og:image" content="https://hjtso.github.io/image/DL/2/autoencoder_1.png">
 <meta property="og:image" content="https://hjtso.github.io/image/DL/2/cnnarchitecture.jpg">
 <meta property="og:image" content="https://hjtso.github.io/image/DL/2/Mask-RCNN.png">
-<meta property="og:updated_time" content="2022-08-08T09:01:19.564Z">
+<meta property="og:updated_time" content="2022-08-08T10:40:17.727Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep learning笔记2-CNN卷积神经网络 | H.J.T. Github">
 <meta name="twitter:description" content="1. 卷积神经网络简介（CNN）原图和公式说明来自：零基础入门深度学习(4) - 卷积神经网络 
@@ -219,7 +219,7 @@ classes that you can use:
 
     <!--
       <li class="navigation__item">
-        <a href="https://www.hjt.so" title=“_hjtso”>
+        <a href="https://hjtso.github.io" title=“_hjtso”>
           <i class='icon cs-icon-wechat'></i>
           <span class="label">Wechat</span>
         </a>
@@ -335,7 +335,7 @@ classes that you can use:
 <p>tf.nn.max_pool() 函数实现最大池化时， ksize参数是滤波器大小，strides参数是步长。2x2 的滤波器配合 2x2 的步长是常用设定。</p>
 <p>ksize 和 strides 参数也被构建为四个元素的列表，每个元素对应 input tensor 的一个维度 ([batch, height, width, channels])，对 ksize 和 strides 来说，batch 和 channel 通常都设置成 1。</p>
 <h4 id="2-2-TF卷积神经网络的实现例"><a href="#2-2-TF卷积神经网络的实现例" class="headerlink" title="2.2. TF卷积神经网络的实现例"></a>2.2. TF卷积神经网络的实现例</h4><p>对 <a href="https://www.cs.toronto.edu/~kriz/cifar.html" title="Title" target="_blank" rel="external">CIFAR-10 数据集</a> 中的图片进行分类。<br>该数据集包含飞机、猫狗和其他物体。先预处理这些图片，然后用所有样本训练一个卷积神经网络。图片需要标准化（normalized），标签需要采用 one-hot 编码。构建卷积（convolution）、最大池化（max pooling）、丢弃（dropout）和完全连接（fully connected）的层。最后在样本图片上看到神经网络的预测结果。</p>
-<p>具体实现不赘述，过程直接看Github，吾辈准确率不高，才57%左右 - <a href="https://github.com/HJTSO/image-classification/blob/master/dlnd_image_classification.ipynb" title="Title" target="_blank" rel="external">Github Link</a>   </p>
+<p>具体实现不赘述，过程直接看Github，吾辈准确率不高，才57%左右 - <a href="https://github.com/hjtso/image-classification/blob/master/dlnd_image_classification.ipynb" title="Title" target="_blank" rel="external">Github Link</a>   </p>
 <h4 id="2-3-卷积神经网络内部一窥"><a href="#2-3-卷积神经网络内部一窥" class="headerlink" title="2.3. 卷积神经网络内部一窥"></a>2.3. 卷积神经网络内部一窥</h4><hr>
 <center><img src="/image/DL/2/CNN.jpg" alt="CNN"></center> 
 
@@ -388,7 +388,7 @@ classes that you can use:
 </li>
 </ul>
 <h3 id="程序实例（Program-Example）"><a href="#程序实例（Program-Example）" class="headerlink" title="程序实例（Program Example）"></a>程序实例（Program Example）</h3><ul>
-<li><a href="https://github.com/HJTSO/image-classification/blob/master/dlnd_image_classification.ipynb" title="Title" target="_blank" rel="external">Github Link</a> </li>
+<li><a href="https://github.com/hjtso/image-classification/blob/master/dlnd_image_classification.ipynb" title="Title" target="_blank" rel="external">Github Link</a> </li>
 </ul>
 <h3 id="参考资料（Reference）"><a href="#参考资料（Reference）" class="headerlink" title="参考资料（Reference）"></a>参考资料（Reference）</h3><ul>
 <li><p><a href="https://zh.gluon.ai/cnn-scratch.html" title="Title" target="_blank" rel="external">Gluon - 卷积神经网络</a> </p>
