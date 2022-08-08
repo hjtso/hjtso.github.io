@@ -4,6 +4,7 @@ title: Deep learning笔记2-CNN卷积神经网络
 lang: zh
 date: 2017-08-15 18:18:56
 tags: Deep Learning
+category: Deep Learning
 ---
 
 ### 1. 卷积神经网络简介（CNN）
@@ -148,7 +149,7 @@ ksize 和 strides 参数也被构建为四个元素的列表，每个元素对�
 对 [CIFAR-10 数据集](https://www.cs.toronto.edu/~kriz/cifar.html "Title") 中的图片进行分类。
 该数据集包含飞机、猫狗和其他物体。先预处理这些图片，然后用所有样本训练一个卷积神经网络。图片需要标准化（normalized），标签需要采用 one-hot 编码。构建卷积（convolution）、最大池化（max pooling）、丢弃（dropout）和完全连接（fully connected）的层。最后在样本图片上看到神经网络的预测结果。
 
-具体实现不赘述，过程直接看Github，吾辈准确率不高，才57%左右 - [Github Link](https://github.com/HJTSO/image-classification/blob/master/dlnd_image_classification.ipynb "Title")   
+具体实现不赘述，过程直接看Github，吾辈准确率不高，才57%左右 - [Github Link](https://github.com/hjtso/image-classification/blob/master/dlnd_image_classification.ipynb "Title")   
 
 #### 2.3. 卷积神经网络内部一窥
 -------------------------------------
@@ -238,7 +239,7 @@ CNN->RCNN->Fast-RCNN->Faster-RCNN->Mask-RCNN->...
 
 ### 程序实例（Program Example）
 
-- [Github Link](https://github.com/HJTSO/image-classification/blob/master/dlnd_image_classification.ipynb "Title") 
+- [Github Link](https://github.com/hjtso/image-classification/blob/master/dlnd_image_classification.ipynb "Title") 
 
 ### 参考资料（Reference）
 

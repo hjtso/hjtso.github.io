@@ -3,6 +3,9 @@ title: 滑雪油画-Skiing Oil Painting
 lang: zh
 date: 2022-04-30 21:30:20
 tags: [Oils, Skiing]
+category:
+  - [Oils]
+  - [Skiing]
 ---
 
 首先是整体结构绘图：

@@ -1,9 +1,9 @@
-
 ---
 title: EOSのDAPP開発流れ
 lang: ja
 date: 2018-08-18 18:18:56
 tags: Blockchain
+category: Blockchain
 ---
 
 
@@ -41,7 +41,7 @@ tags: Blockchain
 -------------------------------------
 ##### Githubプロジェクト（Github）
 
-- [Github Link](https://github.com/HJTSO/eos "Title") 
+- [Github Link](https://github.com/hjtso/eos "Title") 
 
 ##### 参考資料（Reference）
 

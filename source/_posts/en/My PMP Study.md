@@ -3,6 +3,7 @@ title: My PMP Study Notes
 lang: en
 date: 2020-04-01 11:18:52
 tags: PM
+category: PM
 ---
 
 <center>![PMP](/image/PMP/PMP_10.png)</center>

@@ -4,6 +4,7 @@ title: Reinforcement Learning笔记3-Dynamic Program
 lang: zh
 date: 2017-11-13 18:18:56
 tags: Reinforcement Learning
+category: Reinforcement Learning
 ---
 
 #### Bellman最优解策略 - 动态规划法（Dynamic Programming Methods）

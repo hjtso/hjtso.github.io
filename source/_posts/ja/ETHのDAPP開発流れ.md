@@ -1,9 +1,9 @@
-
 ---
 title: ETHのDAPP開発流れ
 lang: ja
 date: 2018-08-08 18:18:56
 tags: Blockchain
+category: Blockchain
 ---
 
 #### 1. コードをRemixに実行し効果を調べる
@@ -33,7 +33,7 @@ tags: Blockchain
 -------------------------------------
 ##### Githubプロジェクト（Github）
 
-- [Github Link](https://github.com/HJTSO/Team_C "Title") 
+- [Github Link](https://github.com/hjtso/Team_C "Title") 
 
 ##### 参考資料（Reference）
 

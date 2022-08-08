@@ -3,6 +3,7 @@ title: 自由潜水-Free Diving
 lang: zh
 date: 2021-04-14 22:15:55
 tags: Diving
+category: Diving
 ---
 
 一个面镜，一套潜衣，一双脚蹼。

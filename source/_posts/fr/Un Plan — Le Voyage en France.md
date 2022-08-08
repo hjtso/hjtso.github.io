@@ -3,6 +3,7 @@ title: Un Plan — Le Voyage en France
 lang: fr
 date: 2016-12-10 01:13:56
 tags: Prose
+category: Prose
 ---
 Pour le vovage de quinze jours en France, je vais visiter ces monuments avec mes aims ou ma famille.
 

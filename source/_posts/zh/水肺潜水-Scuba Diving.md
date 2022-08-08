@@ -3,6 +3,7 @@ title: 水肺潜水-Scuba Diving
 lang: zh
 date: 2021-04-11 22:15:55
 tags: Diving
+category: Diving
 ---
 
 学习了水肺潜水课程，看到了海底不一样的世界。

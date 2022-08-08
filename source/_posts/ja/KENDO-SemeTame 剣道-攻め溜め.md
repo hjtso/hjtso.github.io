@@ -3,6 +3,7 @@ title: KENDO-SemeTame 剣道-攻め溜め
 lang: ja
 date: 2021-01-08 20:20:30
 tags: Kendo
+category: Kendo
 ---
 
 ----------------------------------------

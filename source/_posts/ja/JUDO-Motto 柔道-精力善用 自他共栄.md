@@ -3,6 +3,7 @@ title: JUDO-Motto 柔道-精力善用 自他共栄
 lang: ja
 date: 2017-08-26 20:20:30
 tags: Judo
+category: Judo
 ---
 
 ----------------------------------------

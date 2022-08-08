@@ -4,6 +4,7 @@ title: Reinforcement Learning笔记4-Monte Carlo
 lang: zh
 date: 2017-11-14 18:18:56
 tags: Reinforcement Learning
+category: Reinforcement Learning
 ---
 
 #### Bellman最优解策略 - 蒙特卡罗方法（Monte Carlo Methods）

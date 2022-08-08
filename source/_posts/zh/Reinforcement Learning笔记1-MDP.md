@@ -4,6 +4,7 @@ title: Reinforcement Learning笔记1-MDP
 lang: zh
 date: 2017-11-11 18:18:56
 tags: Reinforcement Learning
+category: Reinforcement Learning
 ---
 
 ### 1. 马尔可夫模型介绍（Markov）

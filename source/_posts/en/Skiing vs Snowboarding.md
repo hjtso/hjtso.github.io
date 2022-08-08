@@ -3,6 +3,7 @@ title: Snowboarding vs Skiing
 lang: en
 date: 2017-08-08 11:18:52
 tags: Skiing
+category: Skiing
 ---
 
 <center>![Snowboarding_and_Skiing](/image/Skiing/Snowboarding_and_Skiing/Snowboarding_and_Skiing.jpg)</center> 

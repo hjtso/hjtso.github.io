@@ -3,6 +3,7 @@ title: The Chords of Guitar-和弦指法图
 lang: zh
 date: 2017-01-01 20:20:30
 tags: Music
+category: Music
 ---
 <center>![pic](/image/Music/Guitar_Chords/1.jpg)</center>
 <center>![pic](/image/Music/Guitar_Chords/2.jpg)</center>

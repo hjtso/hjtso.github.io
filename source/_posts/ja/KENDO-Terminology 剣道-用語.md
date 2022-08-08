@@ -3,6 +3,7 @@ title: KENDO-Terminology 剣道-用語
 lang: ja
 date: 2021-01-11 20:20:30
 tags: Kendo
+category: Kendo
 ---
 <center>![W](/image/Kendo/kendo.gif)</center>
 

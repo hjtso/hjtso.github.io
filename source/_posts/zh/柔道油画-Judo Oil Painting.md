@@ -3,6 +3,9 @@ title: 柔道油画-Judo Oil Painting
 lang: zh
 date: 2022-04-29 21:30:20
 tags: [Oils, Judo]
+category: 
+  - [Oils]
+  - [Judo]
 ---
 
 首先是整体结构绘图：

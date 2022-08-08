@@ -77,8 +77,8 @@ theme: huno
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  # repo: https://github.com/HJTSO/HJTSO.github.io.git
-  repo: git@HJTSO.github.com:HJTSO/HJTSO.github.io.git
+  # repo: https://github.com/hjtso/hjtso.github.io.git
+  repo: git@hjtso.github.com:hjtso/hjtso.github.io.git
   branch: master
 
 # Social

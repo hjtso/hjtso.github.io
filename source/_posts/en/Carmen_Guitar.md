@@ -3,6 +3,7 @@ title: Carmen_Guitar
 lang: en
 date: 2016-12-12 01:00:00
 tags: Music
+category: Music
 ---
 
 <center>![pic](/image/Music/Carmen/Carmen_1.jpg)</center>  

@@ -3,6 +3,7 @@ title: 柔道技用語-Judo Waza Terminology
 lang: ja
 date: 2016-12-28 11:14:30
 tags: Judo
+category: Judo
 ---
 <center>![W](/image/Judo/Judo.jpg)</center>
 # 一 投技 (67本)

@@ -4,6 +4,7 @@ title: Deep learning笔记5-GAN生成式对抗网络
 lang: zh
 date: 2017-08-20 18:18:56
 tags: Deep Learning
+category: Deep Learning
 ---
 
 ### 1. 生成式对抗网络（GAN）
@@ -322,7 +323,7 @@ def train(BATCH_SIZE):
 
 ### 程序实例（Program Example）
 
-- [Github Link](https://github.com/HJTSO/face-generation/blob/master/dlnd_face_generation.ipynb "Title") 
+- [Github Link](https://github.com/hjtso/face-generation/blob/master/dlnd_face_generation.ipynb "Title") 
 
 ### 参考资料（Reference）
 

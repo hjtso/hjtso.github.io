@@ -3,6 +3,9 @@ title: 剑道油画-Kendo Oil Painting
 lang: zh
 date: 2022-04-29 20:30:20
 tags: [Oils, Kendo]
+category: 
+  - [Oils]
+  - [Kendo]
 ---
 
 首先是整体结构绘图：

@@ -3,6 +3,7 @@ title: Active And Passive Vocabulary
 lang: us
 date: 2016-12-10 01:12:34
 tags: Prose
+category: Prose
 ---
 Communications between human are largely based upon language. Learn a new language involves many processes. One step is to learn and build a vocabulary. Vocabulary is comprised of the different words used by speakers to express themselves. Linguists recognize two different types of vocabulary: passive and active.
 

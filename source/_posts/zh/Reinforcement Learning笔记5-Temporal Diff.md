@@ -4,6 +4,7 @@ title: Reinforcement Learning笔记5-Temporal Diff
 lang: zh
 date: 2017-11-15 18:18:56
 tags: Reinforcement Learning
+category: Reinforcement Learning
 ---
 
 #### Bellman最优解策略 - 时间差分法（Temporal Difference）

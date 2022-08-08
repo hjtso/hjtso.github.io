@@ -2,7 +2,10 @@
 title: 潜水油画-Diving Oil Painting
 lang: zh
 date: 2022-04-30 20:30:20
-tags: [Oils, Diving]
+tags: [Oils,Diving]
+category: 
+  - [Oils]
+  - [Diving]
 ---
 
 首先是整体结构绘图：

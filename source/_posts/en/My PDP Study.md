@@ -3,6 +3,7 @@ title: My PDP Study Notes
 lang: en
 date: 2020-04-02 11:18:52
 tags: PM
+category: PM
 ---
 
 <center>![PDP](/image/PDP/PDP_7.jpeg)</center>

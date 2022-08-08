@@ -4,6 +4,7 @@ title: Deep learning笔记1-神经网络入门
 lang: zh
 date: 2017-08-14 18:18:56
 tags: Deep Learning
+category: Deep Learning
 ---
 
 ### 1. 简单的神经网络（Neural Network）

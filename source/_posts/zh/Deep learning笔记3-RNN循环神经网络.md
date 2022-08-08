@@ -4,6 +4,7 @@ title: Deep learning笔记3-RNN循环神经网络
 lang: zh
 date: 2017-08-16 18:18:56
 tags: Deep Learning
+category: Deep Learning
 ---
 
 ### 1. 循环神经网络（RNN）
@@ -331,7 +332,7 @@ Make TV scripts using RNN(Recurrent Neural Networks) and LSTM(Long Short-Term Me
 
 RNN(Recurrent Neural Networks)及びLSTM(Long Short-Term Memory)を使用して、訓練データを用いたモデルを作成して、新しいテレビスクリプトを生成する。
 
-程序实例 - [Github Link](https://github.com/HJTSO/tv-script-generation/blob/master/dlnd_tv_script_generation.ipynb "Title") 
+程序实例 - [Github Link](https://github.com/hjtso/tv-script-generation/blob/master/dlnd_tv_script_generation.ipynb "Title") 
 
 ### 4. 词分析框架（Word Framework）
 
@@ -390,9 +391,9 @@ RNN(Recurrent Neural Networks)及びLSTM(Long Short-Term Memory)を使用して�
 
 ### 程序实例（Program Example）
 
-- [Github Link - tv-script-generation](https://github.com/HJTSO/tv-script-generation/blob/master/dlnd_tv_script_generation.ipynb "Title") 
+- [Github Link - tv-script-generation](https://github.com/hjtso/tv-script-generation/blob/master/dlnd_tv_script_generation.ipynb "Title") 
 
-- [Github Link - language-translation](https://github.com/HJTSO/language-translation/blob/master/dlnd_language_translation.ipynb "Title") 
+- [Github Link - language-translation](https://github.com/hjtso/language-translation/blob/master/dlnd_language_translation.ipynb "Title") 
 
 ### 参考资料（Reference）
 

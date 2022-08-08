@@ -4,6 +4,7 @@ title: Reinforcement Learning笔记2-Bellman
 lang: zh
 date: 2017-11-12 18:18:56
 tags: Reinforcement Learning
+category: Reinforcement Learning
 ---
 
 ### 1. Bellman方程（Bellman Equation）
